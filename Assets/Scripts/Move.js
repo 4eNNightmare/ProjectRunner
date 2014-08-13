@@ -18,6 +18,7 @@ function FixedUpdate () {
 		rigidbody.velocity = Vector3(0, 6, 0);
 		keyPress = false;
 	}
-	rigidbody.MovePosition(rigidbody.position + speed*Time.deltaTime);
+	if(!GetComponent(CollisionChecker).isWallHit)
+		rigidbody.MovePosition(rigidbody.position + speed*Time.deltaTime);
 	
 }
