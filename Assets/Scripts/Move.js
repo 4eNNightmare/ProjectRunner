@@ -1,5 +1,5 @@
 ﻿#pragma strict
-private var speed : Vector3 = Vector3 (2.5, 0, 0);
+public var speed : Vector3 = Vector3 (2.5, 0, 0);
 private var keyPress : boolean;
 
 function Start () {
