@@ -44,12 +44,15 @@ if(contaTempo >= 0.5)
 	{
 		if(podeSaltar)
 		{
-			novoPonto.x = comparaDist.x +1.5 + entrePulo;
+			novoPonto.x = comparaDist.x +3.5 + entrePulo;
 			Instantiate(objeto,novoPonto,transform.rotation);
-			novoPonto.x = comparaDist.x +2.50 + entrePulo;
+			novoPonto.x = comparaDist.x +4.5 + entrePulo;
 			Instantiate(objeto,novoPonto,transform.rotation);
 			entrePulo += 3.5;
-			podeSaltar = false;
+			if(Random.value > 0.6)
+			{
+				podeSaltar = false;
+			}
 		}
 		else{
 			Instantiate(objeto,novoPonto,transform.rotation);
