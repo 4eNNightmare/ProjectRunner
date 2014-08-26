@@ -21,7 +21,7 @@ function Update () {
 		}
 	}
 	
-	if(GetComponent(CollisionChecker).isWallHit){
+	if(GetComponent(CollisionChecker).fatalCollision){
 		transform.renderer.material.color = new Color(0,1,0,1);
 		GameObject.Find("Player/Trail").transform.GetComponent(TrailRenderer).renderer.material.color = new Color(0,1,0,1);
 	}

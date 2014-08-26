@@ -7,7 +7,7 @@ function Start () {
 }
 
 function Update () {
-	if(GetComponent(CollisionChecker).isWallHit){
+	if(GetComponent(CollisionChecker).fatalCollision){
 		gameState = GameState.GameOver;
 	}
 }

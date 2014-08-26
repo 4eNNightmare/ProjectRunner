@@ -46,7 +46,7 @@ function FixedUpdate () {
 		inputJump = false;
 	}
 	
-	if(!GetComponent(CollisionChecker).isWallHit){
+	if(!GetComponent(CollisionChecker).fatalCollision){
 		rigidbody.MovePosition(rigidbody.position + moveSpeed*Time.deltaTime);
 	}
 }
