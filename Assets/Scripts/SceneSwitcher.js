@@ -8,5 +8,8 @@ function OnGUI () {
 
 	if(GUI.Button(new Rect(100,10,80,40), "Scene 2")) {
 	    Application.LoadLevel("Scene02");
+	    
+	}if(GUI.Button(new Rect(180,10,80,40), "Swipe")) {
+	    Application.LoadLevel("Swipe");
 	}
 }
