@@ -1,52 +1,69 @@
 ﻿#pragma strict
-var Swipe: GUIText;
-
 private var startPos :Vector2; 
 private var endPos: Vector2;
+
+public var tempoSwipe : float;
+private var duracaoSwipe : float;
 private var distPosY: float;
 private var distPosX: float;
-public static var touch: Touch;
+
+public var touched : boolean;
+public var swipeDown : boolean;
+public var swipeUp : boolean;
+public var touch: Touch;
+
 
 function Start(){
-	Application.LoadLevelAdditive("TrailTouch");	
+	duracaoSwipe = tempoSwipe;
+	touched = false;
+	swipeDown = false;
+	swipeUp = false;
 }
 
 function Update () {
-
-	if (Input.touchCount > 0){
 	
+	if (Input.touchCount > 0){
+		
 		touch = Input.touches[0];
 		
-		switch (touch.phase){
+		switch(touch.phase){
 			case TouchPhase.Began:
+				duracaoSwipe = tempoSwipe;
 				startPos = touch.position;
-				break;
-			case TouchPhase.Ended:
-				endPos = touch.position;
-				distPosY = Mathf.Abs(endPos.y - startPos.y);
-				distPosX = Mathf.Abs(endPos.x - startPos.x);
-				
-				if(distPosY > distPosX){
-					if (endPos.y < startPos.y) {
-								
-						Swipe.text = "Down Swipe/ Baixo";
-					}		
-					else{
-						
-						Swipe.text = "Up Swipe/ Cima";	
-					}
-						
-					}
-				else{
-					if (endPos.x < startPos.x){
-							Swipe.text = "Right Swipe/ Direita";
-					}	
-					else{	
+				touched = true;
+				break;	
+			case TouchPhase.Moved:
+					duracaoSwipe = duracaoSwipe - Time.deltaTime;
+					if((duracaoSwipe<=0)&&(touched == true)){
+						endPos = touch.position;
 							
-							Swipe.text = "Left Swipe/ Esquerda";
+						distPosY = Mathf.Abs(endPos.y - startPos.y);
+						distPosX = Mathf.Abs(endPos.x - startPos.x);
+
+						if(distPosY > distPosX){
+							if (endPos.y < startPos.y) {//Down Swipe/ Baixo
+								swipeDown = true;
+							}		
+							else{//UP Swipe/ Cima
+								swipeUp = true;
+							}
+									
+							}
+						else{
+							if (endPos.x < startPos.x){//Left Swipe/ Esquerda
+							
+							}	
+							else{//Right Swipe/ Direita";
+							
+							}
+						}
+						touched = false;
 					}
-				}
-			break;
+				break;
+				case TouchPhase.Ended:
+					touched = true;
+				break;
+				
 		}
 	}
-}	
+}

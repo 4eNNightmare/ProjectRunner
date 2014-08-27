@@ -9,15 +9,19 @@ private var rollTimer : float;
 
 function Update () {
 
-	if(Input.GetMouseButtonDown(1) && GetComponent(CollisionChecker).isGrounded && !isRolling){
+	if(GetComponent(CollisionChecker).isGrounded && !isRolling && 
+		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeDown){
 		inputRoll = true;
+		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeDown = false;
 	}
 	
-	if(Input.GetMouseButtonDown(0) && GetComponent(CollisionChecker).isGrounded){
+	if(GetComponent(CollisionChecker).isGrounded &&
+	GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeUp){
 		inputJump = true;
 		if(isRolling){
 			rollTimer = 0;
 		}
+		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeUp = false;
 	}
 	
 	if(isRolling){
