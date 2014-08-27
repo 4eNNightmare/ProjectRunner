@@ -34,36 +34,43 @@ function Update () {
 				break;	
 			case TouchPhase.Moved:
 					duracaoSwipe = duracaoSwipe - Time.deltaTime;
-					if((duracaoSwipe<=0)&&(touched == true)){
-						endPos = touch.position;
-							
-						distPosY = Mathf.Abs(endPos.y - startPos.y);
-						distPosX = Mathf.Abs(endPos.x - startPos.x);
-
-						if(distPosY > distPosX){
-							if (endPos.y < startPos.y) {//Down Swipe/ Baixo
-								swipeDown = true;
-							}		
-							else{//UP Swipe/ Cima
-								swipeUp = true;
-							}
-									
-							}
-						else{
-							if (endPos.x < startPos.x){//Left Swipe/ Esquerda
-							
-							}	
-							else{//Right Swipe/ Direita";
-							
-							}
-						}
-						touched = false;
+					if(duracaoSwipe<=0 && touched == true){
+						Swipe();
 					}
 				break;
 				case TouchPhase.Ended:
+					if(duracaoSwipe>0){
+						Swipe();
+					}
 					touched = true;
-				break;
-				
+				break;	
 		}
+		
 	}
 }
+
+function Swipe(){
+		endPos = touch.position;
+							
+		distPosY = Mathf.Abs(endPos.y - startPos.y);
+		distPosX = Mathf.Abs(endPos.x - startPos.x);
+
+		if(distPosY > distPosX){
+			if (endPos.y < startPos.y) {//Down Swipe/ Baixo
+				swipeDown = true;
+			}		
+				else{//UP Swipe/ Cima
+					swipeUp = true;
+				}
+									
+		}
+		else{
+			if (endPos.x < startPos.x){//Left Swipe/ Esquerda
+							
+			}	
+			else{//Right Swipe/ Direita";
+							
+			}
+		}
+				touched = false;
+	}
