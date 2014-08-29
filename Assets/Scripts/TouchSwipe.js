@@ -1,19 +1,22 @@
 ﻿#pragma strict
-private var startPos :Vector2; 
+private var startPos: Vector2; 
 private var endPos: Vector2;
 
-public var tempoSwipe : float;
+public var tempoSwipe: float;
 private var duracaoSwipe : float;
 private var distPosY: float;
 private var distPosX: float;
+public var distanciaMinima: float;
+private var distXY: float;
 
-public var touched : boolean;
-public var swipeDown : boolean;
-public var swipeUp : boolean;
+public var touched: boolean;
+public var swipeDown: boolean;
+public var swipeUp: boolean;
 public var touch: Touch;
 
 
 function Start(){
+	Application.LoadLevelAdditive("TrailTouch");
 	duracaoSwipe = tempoSwipe;
 	touched = false;
 	swipeDown = false;
@@ -33,20 +36,21 @@ function Update () {
 				touched = true;
 				break;	
 			case TouchPhase.Moved:
-					duracaoSwipe = duracaoSwipe - Time.deltaTime;
-					if(duracaoSwipe<=0 && touched == true){
-						Swipe();
-					}
-				break;
-				case TouchPhase.Ended:
-					if(duracaoSwipe>0){
-						Swipe();
-					}
-					touched = true;
-				break;	
+				duracaoSwipe = duracaoSwipe - Time.deltaTime;
+				if(duracaoSwipe<=0 && touched == true){
+					Swipe();
+				}
+			break;
+			case TouchPhase.Ended:
+				if(duracaoSwipe>0){
+					Swipe();
+				}
+				touched = true;
+			break;
 		}
 		
 	}
+	
 }
 
 function Swipe(){
@@ -54,23 +58,33 @@ function Swipe(){
 							
 		distPosY = Mathf.Abs(endPos.y - startPos.y);
 		distPosX = Mathf.Abs(endPos.x - startPos.x);
-
-		if(distPosY > distPosX){
-			if (endPos.y < startPos.y) {//Down Swipe/ Baixo
-				swipeDown = true;
-			}		
-				else{//UP Swipe/ Cima
-					swipeUp = true;
-				}
-									
+		distXY =(startPos - endPos).magnitude;
+		
+		
+		if(distanciaMinima > distXY && GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){
+				swipeUp = true;
 		}
-		else{
-			if (endPos.x < startPos.x){//Left Swipe/ Esquerda
-							
-			}	
-			else{//Right Swipe/ Direita";
-							
+		else if(distanciaMinima < distXY && GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){
+			if(distPosY > distPosX){
+				if (endPos.y < startPos.y && 
+					GameObject.Find("Player").GetComponent(ConstantMove).isRolling == false){//Down Swipe/ Baixo
+					swipeDown = true;
+				}		
+				else if(endPos.y >= startPos.y && 
+						GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){//UP Swipe/ Cima
+						swipeUp = true;
+					}
+										
+			}
+			else{
+				if (endPos.x < startPos.x){//Left Swipe/ Esquerda
+								
+				}	
+				else{//Right Swipe/ Direita";
+								
+				}
 			}
 		}
-				touched = false;
+			
+		touched = false;
 	}
