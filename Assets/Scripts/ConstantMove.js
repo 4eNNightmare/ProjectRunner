@@ -5,23 +5,33 @@ public var inputJump : boolean = false;
 public var inputRoll : boolean = false;
 public var rollDuration : float;
 public var isRolling : boolean = false;
+public var extraJumpCount : int;
 private var rollTimer : float;
+@HideInInspector public var extraJumpCountTMP : int;
 
 function Update () {
 
-	if(GetComponent(CollisionChecker).isGrounded && !isRolling && 
-		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeDown){
+	if(GetComponent(CollisionChecker).isGrounded && !isRolling && GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown){
 		inputRoll = true;
-		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeDown = false;
+		GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown = false;
 	}
 	
-	if(GetComponent(CollisionChecker).isGrounded &&
-	GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeUp){
-		inputJump = true;
-		if(isRolling){
-			rollTimer = 0;
+	if(GetComponent(CollisionChecker).isGrounded){//se estiver no chao...
+		if(GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp){//...e o swipe for para cima...
+			inputJump = true;//...ira pular...
+			if(isRolling){//...e se estiver rolando...
+				rollTimer = 0;//...ira cancelar o rolamento.
+			}
+			GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
 		}
-		GameObject.Find("Main Camera").GetComponent(TouchSwipe).swipeUp = false;
+		extraJumpCountTMP = extraJumpCount; //enquanto estiver no chao reseta os pulos extras.
+	}
+	else{//Se estiver no ar...
+		if(extraJumpCountTMP > 0 && GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp){//...e ainda tiver pulos extras...
+			inputJump = true;//...ira pular...
+			extraJumpCountTMP--;//...mas subitraira um pulo extra.
+			GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
+		}
 	}
 	
 	if(isRolling){
