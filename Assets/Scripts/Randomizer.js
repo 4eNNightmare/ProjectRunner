@@ -1,8 +1,6 @@
 ﻿#pragma strict
 var newPoint 			: 	 	  int;
-var contaCubos			:		  int;
 var previousWidth		:		  int;
-var sort 				: 		  int;
 var r 					:		  int;
 var repetition			:       int[];
 var timer  				: 		float;
@@ -65,21 +63,53 @@ for(objeto in object)
 		case ("buraco2x1") :
 			objetosOrdenados[1] = objeto;
 			break;
-			
-		case ("ground1") :
+		
+		case ("buraco3x1") :
 			objetosOrdenados[2] = objeto;
 			break;
-	
-		case ("ground2") :
+			
+		case ("buraco4x1") :
 			objetosOrdenados[3] = objeto;
 			break;
 			
-		case ("ground3") :
+		case ("buraco5x1") :
 			objetosOrdenados[4] = objeto;
 			break;
 			
-		case ("Obstaculo") :
+		case ("buraco6x1") :
 			objetosOrdenados[5] = objeto;
+			break;
+			
+		case ("buraco7x1") :
+			objetosOrdenados[6] = objeto;
+			break;
+			
+		case ("ground1") :
+			objetosOrdenados[7] = objeto;
+			break;
+	
+		case ("ground2") :
+			objetosOrdenados[8] = objeto;
+			break;
+			
+		case ("ground3") :
+			objetosOrdenados[9] = objeto;
+			break;
+			
+		case ("Obstaculo1") :
+			objetosOrdenados[10] = objeto;
+			break;
+			
+		case ("Obstaculo2.1") :
+			objetosOrdenados[11] = objeto;
+			break;
+			
+		case ("Obstaculo2.2") :
+			objetosOrdenados[12] = objeto;
+			break;
+			
+		case ("Obstaculo2.3") :
+			objetosOrdenados[13] = objeto;
 			break;
 			
 		default :
@@ -118,6 +148,21 @@ function podeFazer(){
 			if(penObject.name == "ground3" && thirdObject.name == "ground3") podeInstanciar[5] = true;
 			//podeInstanciar[6] = false;
 			//podeInstanciar[7] = false;
+			break;
+			
+		case ("buraco3x1") :
+			break;
+		
+		case ("buraco4x1") :
+			break;
+			
+		case ("buraco5x1") :
+			break;
+			
+		case ("buraco6x1") :
+			break;
+	
+		case ("buraco7x1") :
 			break;
 			
 		case ("ground1") :
@@ -218,7 +263,7 @@ function podeFazer(){
 			//podeInstanciar[7] = false;
 			break;
 			
-		case ("Obstaculo") :
+		case ("Obstaculo1") :
 		
 			podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
@@ -228,6 +273,15 @@ function podeFazer(){
 			podeInstanciar[5] = false;
 			//podeInstanciar[6] = false;
 			//podeInstanciar[7] = false;
+			break;
+			
+		case ("Obstaculo2.1") :
+			break;
+			
+		case ("Obstaculo2.2") :
+			break;
+			
+		case ("Obstaculo2.3") :
 			break;
 			
 		default :
@@ -255,46 +309,103 @@ do{
 	detectaUltimos();
 switch(r)
 {
-	case(0): //buraco
-		lastObject = objetosOrdenados[0];
+	case(0): //buraco 1x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[0], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 1;
 	break;
 	
-	case(1): //buraco 2
-		lastObject = objetosOrdenados[1];
+	case(1): //buraco 2x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[1], new Vector3(lastPoint.x+objetosOrdenados[1].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[1].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 2;
 	break;
 	
-	case(2): //cubo 1
-		lastObject = objetosOrdenados[2];
+	case(2): //buraco 3x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[2], new Vector3(lastPoint.x+objetosOrdenados[2].transform.localScale.x/2,-0.5,0),transform.rotation);
-		previousWidth = 1;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		previousWidth = 3;
 	break;
 	
-	case(3): // cubo 2
-		lastObject = objetosOrdenados[3];
+	case(3): //buraco 4x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[3], new Vector3(lastPoint.x+objetosOrdenados[3].transform.localScale.x/2,-0.25,0),transform.rotation);
-		previousWidth = 1;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		previousWidth = 4;
 	break;
 	
-	case(4): // cubo 3
-		lastObject = objetosOrdenados[4];
+	case(4): //buraco 5x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[4], new Vector3(lastPoint.x+objetosOrdenados[4].transform.localScale.x/2,-0,0),transform.rotation);
-		previousWidth = 1;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		previousWidth = 5;
 	break;
 	
-	case(5): // obstaculo
-		lastObject = objetosOrdenados[5];
+	case(5): //buraco 6x1
+		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[5], new Vector3(lastPoint.x+3.5,0,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		previousWidth = 6;
+	break;
+	
+	case(6): //buraco 7x1
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 7;
+	break;
+
+	
+	case(7): //cubo 1 /ground 1
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[2].transform.localScale.x/2,-0.5,0),transform.rotation);
+		previousWidth = 1;
+	break;
+	
+	case(8): // cubo 2 /ground 2
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[3].transform.localScale.x/2,-0.25,0),transform.rotation);
+		previousWidth = 1;
+	break;
+	
+	case(9): // cubo 3 /ground 3
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[4].transform.localScale.x/2,-0,0),transform.rotation);
+		previousWidth = 1;
+	break;
+	
+	case(10): // obstaculo 1
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+3.5,0,0),transform.rotation);
+		previousWidth = 7;
+	break;
+	
+	case(11): // obstaculo 2.1
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,-0.5,0),transform.rotation);
+		previousWidth = 3;
+	break;
+	
+	case(12): // obstaculo 2.2
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,-0.25,0),transform.rotation);
+		previousWidth = 3;
+	break;
+	
+	case(13): // obstaculo 2.3
+		lastObject = objetosOrdenados[r];
+		lastPoint.x += previousWidth;
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,0,0),transform.rotation);
+		previousWidth = 3;
 	break;
 	
 	default:
@@ -305,235 +416,3 @@ switch(r)
 }
 
 }
-
-
-
-//function DrawInstance (Paulo : GameObject) : void
-//{
-//		Instantiate(Paulo,lastPoint,transform.rotation);
-//}
-////funçao Padrao;
-//function EscolheObjeto() : GameObject
-//{
-//	var id : int = 0;
-//	for(x in object)
-//	{
-//		object[id].name = "Paulo";
-//		Debug.Log(object[id].name);
-//		sort = Random.Range(3,10);
-//		switch(x.name)
-//		{
-//			case("buraco1x1"):
-//				if( ( (ground1 > 6)||(ground2>5)||(ground3>4) ) && ( (lastInstanciate.name != "buraco1x1")&&(lastInstanciate.name != "buraco2x1")&&(canJump) ) ) 
-//				{
-//					canJump = false;
-//					lastInstanciate = x;
-//					EscolheObjeto(x);
-//				}
-//				else
-//				{
-//					if(lastInstanciate != "Obstaculo")
-//					{
-//						canJump = false;
-//						EscolheObjeto(lastInstanciate);							
-//					}
-//					else
-//					{
-//						for(obs in object)
-//						{
-//							if(obs.name == "ground3")
-//							{	
-//								canJump = true;
-//								lastInstanciate = obs;
-//								EscolheObjeto(obs);
-//							}
-//						}
-//					}
-//				}
-//		novoObjeto = lastInstanciate;
-//		break;
-//		
-//		case("buraco2x1"):
-//				if( ( (ground1 > 6)||(ground2>6)||(ground3>6) ) && ( (lastInstanciate.name != "buraco1x1")&&(lastInstanciate.name != "buraco2x1")&&(canJump) ) ) 
-//				{
-//					canJump = false;
-//					lastInstanciate = x;
-//					EscolheObjeto(x);
-//				}
-//				else
-//				{
-//					if(lastInstanciate != "Obstaculo")
-//					{
-//					/*///#############################################################################################///////
-//					///// MODIFICAR   		//Debug.Log("the book is on the table")// 						MODIFICAR ///////
-//					////#############################################################################################//////*/
-//						EscolheObjeto(lastInstanciate);							
-//					}
-//					else
-//					{
-//						for(obs in object)
-//						{
-//							if(obs.name == "ground2")
-//							{	
-//								canJump = true;
-//								lastInstanciate = obs;
-//								EscolheObjeto(obs);
-//							}
-//						}
-//					}
-//				}
-//		novoObjeto = lastInstanciate;
-//		break;
-//	
-//		case("ground1"):
-//			if((sort > ground1)&&(lastInstanciate.name != x.name) )
-//			{
-//			sort = Random.Range(0,3);
-//				if(sort <3)
-//				{
-//					lastInstanciate = x;
-//					EscolheObjeto(x);
-//				}
-//				else
-//				{
-//					for(obs in object)
-//					{
-//						if(obs.name == "ground2")
-//						{
-//							lastInstanciate = obs;
-//							EscolheObjeto(obs);
-//						}
-//					}
-//				}
-//			}
-//		novoObjeto = lastInstanciate;
-//		break;
-//	
-//		case("ground2"):
-//			if(( (ground2 <=sort)||(ground1>sort)||(ground3>sort) )&&(lastInstanciate.name == x.name) )
-//			{	
-//			sort = Random.Range(0,3);
-//				if(sort <3)
-//				{
-//
-//					lastInstanciate = x;
-//					EscolheObjeto(x);
-//				}
-//				else
-//				{
-//					for(obs in object)
-//					{
-//						if(obs.name == "ground2")
-//						{
-//							lastInstanciate = obs;
-//							EscolheObjeto(obs);
-//						}
-//					}
-//				}
-//			}
-//		novoObjeto = lastInstanciate;
-//		break;
-//		
-//		case("ground3"):
-//			if(( (ground2 <=sort)||(ground1>sort)||(ground3>sort) )&&(lastInstanciate.name == x.name) )
-//			{	
-//			sort = Random.Range(0,3);
-//				if(sort <3)
-//				{
-//					lastInstanciate = x;
-//					EscolheObjeto(x);
-//				}
-//				else
-//				{
-//					for(obs in object)
-//					{
-//						if(obs.name == "ground3")
-//						{
-//							lastInstanciate = obs;
-//							EscolheObjeto(obs);
-//						}
-//					}
-//				}
-//			}
-//		novoObjeto = lastInstanciate;
-//		break;
-//		
-//		case("Obstaculo"):
-//		break;
-//		
-//		default :
-//			Debug.Log("Default");
-//		
-//	}
-//	id++;
-//}
-//
-//return novoObjeto;
-//}
-//
-//function EscolheObjeto(reajuste : GameObject) : void
-//{
-//	switch(reajuste.name)
-//	{
-//		case("ground1"):
-//			ground1 += 1;
-//			ground2 = 0;
-//			ground3 = 0;
-//			contaCubos += 1;
-//			lastPoint.y = -0.5;
-//			lastPoint.x += 1;
-//			if((ground1 % 15) == 0) Debug.Log("chao chao chao");
-//			break;
-//
-//		case("ground2"):
-//			ground1 = 0;
-//			ground2 += 1;
-//			ground3 = 0;
-//			contaCubos += 1;
-//			lastPoint.y = -0.25;
-//			lastPoint.x += 1;
-//			break;
-//			
-//		case("ground3"):
-//			ground1 = 0;
-//			ground2 = 0;
-//			ground3 += 1;
-//			contaCubos += 1;
-//			lastPoint.y = 0;
-//			lastPoint.x += 1;
-//			break;
-//		
-//		case("buraco1x1"):
-//			ground1 = 0;
-//			ground2 = 0;
-//			ground3 = 0;
-//			contaCubos += 1;
-//			lastPoint.y = 0;
-//			lastPoint.x += 2;
-//			break;
-//		
-//		case("buraco2x1"):
-//			ground1 = 0;
-//			ground2 = 0;
-//			ground3 = 0;
-//			contaCubos += 2;
-//			lastPoint.y = 0;
-//			lastPoint.x += 3;
-//			break;
-//			
-//		case("Obstaculo"):
-//			ground1 += 2;
-//			ground2 = 0;
-//			ground3 = 0;
-//			contaCubos += 6;
-//			lastPoint.y = 0;
-//			lastPoint.x += 6;
-//			break;	
-//			
-//		default :
-//			Debug.Log("Debugando..");		
-//		
-//	}
-//	DrawInstance(reajuste);
-//
-//}
