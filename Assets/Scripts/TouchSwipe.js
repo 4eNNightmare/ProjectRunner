@@ -61,10 +61,8 @@ function Swipe(){
 		distXY =(startPos - endPos).magnitude;
 		
 		
-//		if(distanciaMinima > distXY && (GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded || GameObject.Find("Player").GetComponent(PlayerController).extraJumpCount > 0)){
-//				swipeUp = true;
-//		}
-/*		else*/ if(distanciaMinima < distXY && (GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded || GameObject.Find("Player").GetComponent(PlayerController).extraJumpCount > 0)){
+
+		if(distanciaMinima < distXY && (GameObject.Find("Player").GetComponent(CollisionChecker).rigidbody.velocity.y < 0 || GameObject.Find("Player").GetComponent(PlayerController).extraJumpCount > 0)){
 			if(distPosY > distPosX){
 				if (endPos.y < startPos.y && (GameObject.Find("Player").GetComponent(PlayerController).isRolling == false)){//Down Swipe/ Baixo
 					swipeDown = true;
