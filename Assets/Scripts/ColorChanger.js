@@ -26,7 +26,7 @@ function Update () {
 		GameObject.Find("Player/Trail").transform.GetComponent(TrailRenderer).renderer.material.color = new Color(0,1,0,1);
 	}
 	
-	if(GetComponent(ConstantMove).isRolling){
+	if(GetComponent(PlayerController).isRolling){
 		transform.renderer.material.color = new Color(0,0,1,0.5);
 		GameObject.Find("Player/Trail").transform.GetComponent(TrailRenderer).renderer.material.color = new Color(0,1,0,1);
 	}

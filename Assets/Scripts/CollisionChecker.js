@@ -29,7 +29,7 @@ function Update () {
 	
 	colliderRadius = transformCollider.GetComponent(CapsuleCollider).radius;
 	colliderHeight = transformCollider.GetComponent(CapsuleCollider).height;
-	if(!GetComponent(ConstantMove).isRolling){//Deternina a posiçao central do colisor da cabeça e corpo
+	if(!GetComponent(PlayerController).isRolling){//Deternina a posiçao central do colisor da cabeça e corpo
 		headCenterPoint = new Vector3(transformCollider.position.x, transformCollider.position.y + colliderHeight/4, transformCollider.position.z);
 		bodyCenterPoint = new Vector3(transformCollider.position.x, transformCollider.position.y - colliderHeight/4, transformCollider.position.z);
 		rayGroundOrigin = headCenterPoint;
@@ -83,12 +83,12 @@ function Update () {
 			}
 		}
 	}
-	else{
-		canClimb = false;
-	}
+//	else{
+//		canClimb = false;
+//	}
 	
 	if(Physics.SphereCast(rayCeiling, colliderRadius, hitCeiling, collisionDistanceCeiling, rayCastLayer)){//Detecta se bateu o topo da cabeça
-		if(!GetComponent(ConstantMove).isRolling){
+		if(!GetComponent(PlayerController).isRolling){
 			Debug.DrawLine(headCenterPoint, hitCeiling.point, Color.yellow);
 			if(!bodyHorizontalCollision){
 				headVerticalCollision = true;
@@ -177,6 +177,6 @@ function OnGUI(){
 	"\ncause of death: " + causeOfDeath+
 	"\n"+
 	"[Jump]"+
-	"\nExtra Jump: " + GetComponent(ConstantMove).extraJumpCountTMP + "("+GetComponent(ConstantMove).extraJumpCount+")"
+	"\nExtra Jump: " + GetComponent(PlayerController).extraJumpCountTMP + "("+GetComponent(PlayerController).extraJumpCount+")"
 	);
 }
