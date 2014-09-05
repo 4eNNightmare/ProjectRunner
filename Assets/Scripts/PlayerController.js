@@ -11,34 +11,26 @@ private var rollTimer : float;
 
 function Update () {
 
-	if(GetComponent(CollisionChecker).isGrounded && !isRolling &&
-	   GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown || 
-	   GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeDown){
-	   		inputRoll = true;
-			GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown = false;
-			GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeDown = false;
+	if(GetComponent(CollisionChecker).isGrounded && !isRolling && GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown){
+		inputRoll = true;
+		GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown = false;
 	}
 	
 	if(GetComponent(CollisionChecker).isGrounded){//se estiver no chao...
-		if(GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp ||
-		   GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeUp){//...e o swipe for para cima...
+		if(GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp){//...e o swipe for para cima...
 			inputJump = true;//...ira pular...
 			if(isRolling){//...e se estiver rolando...
 				rollTimer = 0;//...ira cancelar o rolamento.
 			}
 			GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
-			GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeUp = false;
 		}
 		extraJumpCountTMP = extraJumpCount; //enquanto estiver no chao reseta os pulos extras.
 	}
 	else{//Se estiver no ar...
-		if(extraJumpCountTMP > 0 && 
-		   GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp || 
-		   GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeUp){//...e ainda tiver pulos extras...
+		if(extraJumpCountTMP > 0 && GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp){//...e ainda tiver pulos extras...
 			inputJump = true;//...ira pular...
 			extraJumpCountTMP--;//...mas subitraira um pulo extra.
 			GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
-			GameObject.Find("Player/Main Camera").GetComponent(MouseControler).swipeUp = false;
 		}
 	}
 	
