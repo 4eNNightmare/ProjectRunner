@@ -126,57 +126,159 @@ function podeFazer(){
 			if(penObject.name == "ground3" && penObject.name == "ground2") podeInstanciar[0] = true;
 			if(thirdObject.name == "buraco1x1" || thirdObject.name == "buraco2x1") podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
-			podeInstanciar[2] = true;
+			podeInstanciar[2] = false;
 			podeInstanciar[3] = false;
-			if(penObject.name == "ground3"||penObject.name == "ground2") podeInstanciar[3] = true;
 			podeInstanciar[4] = false;
-			if(thirdObject.name == "ground3" && penObject.name == "ground2") podeInstanciar[4]= true;
 			podeInstanciar[5] = false;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = true;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 				
 		case ("buraco2x1") :
 			podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
-			podeInstanciar[2] = true;
+			podeInstanciar[2] = false;
 			podeInstanciar[3] = false;
-			if(penObject.name == "ground2") podeInstanciar[3] = true;
 			podeInstanciar[4] = false;
-			if(penObject.name == "ground3") podeInstanciar[4] = true;
 			podeInstanciar[5] = false;
-			if(penObject.name == "ground3" && thirdObject.name == "ground3") podeInstanciar[5] = true;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			if(penObject.name == "ground3" && thirdObject.name == "ground3") podeInstanciar[10] = true;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("buraco3x1") :
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 		
 		case ("buraco4x1") :
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("buraco5x1") :
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("buraco6x1") :
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 	
 		case ("buraco7x1") :
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			if(penObject.name == "ground2") podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			if(penObject.name == "ground3") podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("ground1") :
-			podeInstanciar[3] = true;
-			podeInstanciar[2] = true;
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
 			podeInstanciar[4] = false;
-			if((thirdObject.name == "ground2")&&(penObject.name == "ground1")&&(lastObject.name == "ground1")) podeInstanciar[4] = false;
-			if(penObject.tag == "Ground" && lastObject.tag == "Ground")podeInstanciar[0] = true;
-			if((thirdObject.name == "ground3") && ((penObject.name == "buraco1x1") ||(penObject.name == "ground2") || (penObject.name == "buraco2x1")))
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			podeInstanciar[9] = false;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
+
+			if((thirdObject.name == "ground2")&&(penObject.name == "ground1")&&(lastObject.name == "ground1")) podeInstanciar[4] = false;podeInstanciar[7] = true;
+			if(penObject.tag == "Ground" && lastObject.tag == "Ground")podeInstanciar[0] = true;podeInstanciar[1] = true; podeInstanciar[2] = false;
+			if((thirdObject.name == "ground3") && ((penObject.tag == "Hole") ||(penObject.name == "ground2") || (penObject.tag == "Hole")))
 			{
-				podeInstanciar[0] = false;
-				podeInstanciar[1] = false;
-				podeInstanciar[2] = true;
-				podeInstanciar[5] = false;
+				podeInstanciar[7] = true;
+				podeInstanciar[8] = true;
 			}
 			
 			if((thirdObject.name == "ground1") && (penObject == "ground1") && (lastObject.name == "ground1"))
@@ -185,60 +287,77 @@ function podeFazer(){
 				podeInstanciar[1] = true;
 				podeInstanciar[2] = true;
 				podeInstanciar[3] = true;
+				podeInstanciar[4] = true;
+				podeInstanciar[5] = true;
+			 	podeInstanciar[6] = true;
+			 	podeInstanciar[7] = true;
+			 	podeInstanciar[8] = true;
+				podeInstanciar[9] = false;
+				podeInstanciar[10] = false;
+			 	podeInstanciar[11] = true;
+			 	podeInstanciar[12] = true;
+			 	podeInstanciar[13] = false;
 			}
 			
 			if(((thirdObject.name == "ground2") || (thirdObject.name == "ground3")) || (penObject.name == "ground2")){
-				podeInstanciar[0] = false;
-				podeInstanciar[1] = false;
-				podeInstanciar[2] = true;
-				podeInstanciar[3] = false;
+				podeInstanciar[7] = true;
+				podeInstanciar[8] = false;
 		
 			}
 			if(penObject.name == "ground1" && (lastObject.name == "buraco2x1") || (lastObject.name == "buraco1x1")){
-			 podeInstanciar[3] = false;
-			 podeInstanciar[2] = true;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			 podeInstanciar[9] = false;
+			 podeInstanciar[7] = true;
 			}
-			if(penObject.name == "ground1" && (thirdObject.name == "buraco2x1") || (thirdObject.name == "buraco1x1")){
-			 podeInstanciar[3] = false;
-			 podeInstanciar[2] = true;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			if(penObject.name == "ground1" && (thirdObject.tag == "Hole")){
+			 podeInstanciar[8] = false;
+			 podeInstanciar[7] = true;
 			}
-			if((thirdObject.name == "ground2") && (penObject.name == "ground1")) podeInstanciar[4] = false;
+			if((thirdObject.name == "ground2") && (penObject.name == "ground1")) podeInstanciar[9] = false;
 			break;
 	
 		case ("ground2") :
-			podeInstanciar[2] = true;
-			if((thirdObject.name  == "ground1") && (penObject.name == "ground2") && (lastObject.name == "ground2"))	podeInstanciar[2] = false;
-			if(penObject.name == "ground2" && (thirdObject.name == "buraco2x1") || (thirdObject.name == "buraco1x1")){
+			podeInstanciar[7] = true;
+			if((thirdObject.name  == "ground1") && (penObject.name == "ground2") && (lastObject.name == "ground2"))	podeInstanciar[7] = false;
+			if(penObject.name == "ground2" && (thirdObject.name == "buraco2x1") || (thirdObject.name == "buraco1x1"))
+			{
 			 podeInstanciar[4] = false;
 			 podeInstanciar[3] = true;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			 podeInstanciar[6] = false;
+			 podeInstanciar[7] = false;
 			}
 			if(penObject.name == "ground2")
 			{
-			podeInstanciar[0] = true;
-			podeInstanciar[1] = true;
-			podeInstanciar[3] = true;
-			podeInstanciar[4] = true;
-			podeInstanciar[5] = false;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			 podeInstanciar[0] = false;
+			 podeInstanciar[1] = false;
+			 podeInstanciar[3] = false;
+			 podeInstanciar[4] = false;
+			 podeInstanciar[5] = false;
+			 podeInstanciar[6] = false;
+			 podeInstanciar[7] = true;
+			 podeInstanciar[8] = true;
+			 podeInstanciar[9] = true;
+			 podeInstanciar[10] = false;
+			 podeInstanciar[11] = false;
+			 podeInstanciar[12] = true;
+			 podeInstanciar[13] = false;
 			}
 			else{
-			podeInstanciar[0] = false;
-			podeInstanciar[1] = false;
-			podeInstanciar[2] = false;
-			podeInstanciar[3] = true;
-			podeInstanciar[4] = false;
-			podeInstanciar[5] = false;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			 podeInstanciar[0] = false;
+			 podeInstanciar[1] = false;
+			 podeInstanciar[2] = false;
+			 podeInstanciar[3] = false;
+			 podeInstanciar[4] = false;
+			 podeInstanciar[5] = false;
+			 podeInstanciar[6] = false;
+			 podeInstanciar[7] = true;
+			 podeInstanciar[8] = true;
+			 podeInstanciar[9] = false;
+			 podeInstanciar[10] = false;
+			 podeInstanciar[11] = false;
+			 podeInstanciar[12] = true;
+			 podeInstanciar[13] = false;
 			}
-			if((thirdObject.name == "buraco2x1") && (penObject.name == "ground2")) podeInstanciar[4] = false;
+			if((thirdObject.name == "buraco2x1") && (penObject.name == "ground2")) podeInstanciar[9] = false;
 			break;
 			
 		case ("ground3") :
@@ -247,17 +366,33 @@ function podeFazer(){
 				podeInstanciar[1] = false;
 				podeInstanciar[2] = false;
 				podeInstanciar[3] = false;
-				podeInstanciar[4] = true;
+				podeInstanciar[4] = false;
 				podeInstanciar[5] = false;
+				podeInstanciar[6] = false;
+				podeInstanciar[7] = false;
+				podeInstanciar[8] = false;
+				podeInstanciar[9] = true;
+				podeInstanciar[10] = false;
+				podeInstanciar[11] = false;
+				podeInstanciar[12] = false;
+				podeInstanciar[13] = false;
 				
 			}
 			else{
 				podeInstanciar[0] = false;
 				podeInstanciar[1] = false;
 				podeInstanciar[2] = false;
-				podeInstanciar[3] = true;
-				podeInstanciar[4] = true;
-				podeInstanciar[5] = true;
+				podeInstanciar[3] = false;
+				podeInstanciar[4] = false;
+				podeInstanciar[5] = false;
+				podeInstanciar[6] = false;
+				podeInstanciar[7] = true;
+				podeInstanciar[8] = true;
+				podeInstanciar[9] = true;
+				podeInstanciar[10] = true;
+				podeInstanciar[11] = true;
+				podeInstanciar[12] = false;
+				podeInstanciar[13] = true;
 			}
 			//podeInstanciar[6] = false;
 			//podeInstanciar[7] = false;
@@ -267,33 +402,94 @@ function podeFazer(){
 		
 			podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = true;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
+			break;
+			
+		case ("Obstaculo2.1") :
+			podeInstanciar[0] = true;
+			podeInstanciar[1] = true;
 			podeInstanciar[2] = true;
 			podeInstanciar[3] = false;
 			podeInstanciar[4] = false;
 			podeInstanciar[5] = false;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
-			break;
-			
-		case ("Obstaculo2.1") :
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			podeInstanciar[9] = false;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = true;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("Obstaculo2.2") :
+			podeInstanciar[0] = true;
+			podeInstanciar[1] = true;
+			podeInstanciar[2] = true;
+			podeInstanciar[3] = true;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = true;
+			podeInstanciar[9] = true;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = true;
+			podeInstanciar[13] = false;
 			break;
 			
 		case ("Obstaculo2.3") :
+			podeInstanciar[0] = true;
+			podeInstanciar[1] = true;
+			podeInstanciar[2] = true;
+			podeInstanciar[3] = true;
+			podeInstanciar[4] = true;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = true;
+			podeInstanciar[9] = false;
+			podeInstanciar[10] = true;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = true;
 			break;
 			
 		default :
 		
 			podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
-			podeInstanciar[2] = true;
+			podeInstanciar[2] = false;
 			podeInstanciar[3] = false;
 			podeInstanciar[4] = false;
 			podeInstanciar[5] = false;
-			//podeInstanciar[6] = false;
-			//podeInstanciar[7] = false;
+			podeInstanciar[0] = false;
+			podeInstanciar[1] = false;
+			podeInstanciar[2] = false;
+			podeInstanciar[3] = false;
+			podeInstanciar[4] = false;
+			podeInstanciar[5] = false;
+			podeInstanciar[6] = false;
+			podeInstanciar[7] = true;
+			podeInstanciar[8] = false;
+			podeInstanciar[9] = false;
+			podeInstanciar[10] = false;
+			podeInstanciar[11] = false;
+			podeInstanciar[12] = false;
+			podeInstanciar[13] = false;
+			
 			Debug.Log("Default escolha");	
 	}
 }
@@ -312,49 +508,49 @@ switch(r)
 	case(0): //buraco 1x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 1;
 	break;
 	
 	case(1): //buraco 2x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[1].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 2;
 	break;
 	
 	case(2): //buraco 3x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 3;
 	break;
 	
 	case(3): //buraco 4x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 4;
 	break;
 	
 	case(4): //buraco 5x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 5;
 	break;
 	
 	case(5): //buraco 6x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 6;
 	break;
 	
 	case(6): //buraco 7x1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 7;
 	break;
 
@@ -362,21 +558,21 @@ switch(r)
 	case(7): //cubo 1 /ground 1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[2].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 1;
 	break;
 	
 	case(8): // cubo 2 /ground 2
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[3].transform.localScale.x/2,-0.25,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.25,0),transform.rotation);
 		previousWidth = 1;
 	break;
 	
 	case(9): // cubo 3 /ground 3
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[4].transform.localScale.x/2,-0,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0,0),transform.rotation);
 		previousWidth = 1;
 	break;
 	
@@ -390,14 +586,14 @@ switch(r)
 	case(11): // obstaculo 2.1
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,0,0),transform.rotation);
 		previousWidth = 3;
 	break;
 	
 	case(12): // obstaculo 2.2
 		lastObject = objetosOrdenados[r];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,-0.25,0),transform.rotation);
+		Instantiate(objetosOrdenados[r], new Vector3(lastPoint.x+1.5,1.25,0),transform.rotation);
 		previousWidth = 3;
 	break;
 	
@@ -411,7 +607,7 @@ switch(r)
 	default:
 		lastObject = objetosOrdenados[0];
 		lastPoint.x += previousWidth;
-		Instantiate(objetosOrdenados[0], new Vector3(lastPoint.x+objetosOrdenados[0].transform.localScale.x/2,-0.5,0),transform.rotation);
+		Instantiate(objetosOrdenados[0], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 1;	
 }
 
