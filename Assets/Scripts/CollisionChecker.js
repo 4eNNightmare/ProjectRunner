@@ -16,7 +16,7 @@ private var headCenterPoint : Vector3;
 private var bodyCenterPoint : Vector3;
 private var colliderRadius : float;
 private var colliderHeight : float;
-private var causeOfDeath : String = "\nNone";
+public var causeOfDeath : String = "None";
 
 private var hitWallHeightCheckerDistance : float;
 private var hitWallHeightCheckerDistanceAUX : float;
@@ -77,8 +77,8 @@ function Update () {
 			canClimb = false;
 			if(!bodyHorizontalCollision){
 				fatalCollision = true;
-				if(String.Compare(causeOfDeath, "\nNone") == 0){
-					causeOfDeath = "\nTrupicou e caiu";
+				if(String.Compare(causeOfDeath, "None") == 0){
+					causeOfDeath = "Trupicou e caiu";
 				}
 			}
 		}
@@ -99,8 +99,8 @@ function Update () {
 	if(bodyHorizontalCollision){
 		if(!canClimb){//bateu de frente e nao pode escalar (canClimb = false)
 			fatalCollision = true;
-			if(String.Compare(causeOfDeath, "\nNone") == 0){
-				causeOfDeath = "\nBateu de frente\n(Parede Baixa)";
+			if(String.Compare(causeOfDeath, "None") == 0){
+				causeOfDeath = "Bateu de frente(Parede Baixa)";
 			}
 		}
 		else{//bateu de frente mas o rayWallHeightChecker nao consegue detectar corretamente a altura da parede (camClimb = true)
@@ -110,8 +110,8 @@ function Update () {
 				
 				if(Mathf.Round(hitWallHeightCheckerDistanceAUX) != Mathf.Round(hitWallHeightCheckerDistance)){//compara se existe diferenças nas mediçoes entre o rayWallHeightChecker e rayWallHeightCheckerAUX
 					fatalCollision = true;
-					if(String.Compare(causeOfDeath, "\nNone") == 0){
-						causeOfDeath = "\nBateu de frente\n(Parede Alta)";
+					if(String.Compare(causeOfDeath, "None") == 0){
+						causeOfDeath = "Bateu de frente(Parede Alta)";
 					}
 					hitWallHeightCheckerDistance = hitWallHeightCheckerDistanceAUX;
 				}
@@ -124,8 +124,8 @@ function Update () {
 	else{
 		if(headVerticalCollision){
 			fatalCollision = true;
-			if(String.Compare(causeOfDeath, "\nNone") == 0){
-				causeOfDeath = "\nBateu a cabeça";
+			if(String.Compare(causeOfDeath, "None") == 0){
+				causeOfDeath = "Bateu a cabeça";
 			}	
 		}
 	}
@@ -174,7 +174,7 @@ function OnGUI(){
 	"[Climb]"+
 	"\nWallHeight: " + hitWallHeightCheckerDistance.ToString("F2")+ "("+maxHeightStep+")" +
 	"\ncanClimb: " + canClimb +
-	"\ncause of death: " + causeOfDeath+
+	"\ncause of death:\n "+causeOfDeath+
 	"\n"+
 	"[Jump]"+
 	"\nExtra Jump: " + GetComponent(PlayerController).extraJumpCountTMP + "("+GetComponent(PlayerController).extraJumpCount+")"

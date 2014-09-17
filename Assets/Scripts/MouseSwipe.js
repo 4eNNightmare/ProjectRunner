@@ -26,20 +26,20 @@ function Update () {
 		duracaoSwipe = tempoSwipe;
 		startPos = Input.mousePosition;
 		clicked = true;
-		Debug.Log("press");
+//		Debug.Log("press");
 	}
 	if(Input.GetMouseButton(0)){
 		duracaoSwipe = duracaoSwipe - Time.deltaTime;
 		if(duracaoSwipe<=0 && clicked == true){
 			Swipe();
 		}
-			Debug.Log("manteve Press");
+//			Debug.Log("manteve Press");
 	}
 	if(Input.GetMouseButtonUp(0)){
 		if(duracaoSwipe>0){
 			Swipe();
 			}
-		Debug.Log("soltou Press");
+//		Debug.Log("soltou Press");
 	}
 }
 function Swipe(){
