@@ -2,7 +2,9 @@
 var newPoint 			: 	 	  int;
 var previousWidth		:		  int;
 var r 					:		  int;
-var repetition			:       int[];
+var repetition			:       float[];
+var percent				: 		float[];
+var somaTotal			:		float;
 var timer  				: 		float;
 var nextPieceofGroundX	:		float;
 var podeInstanciar		: 	boolean[];
@@ -14,7 +16,8 @@ var lastObject			:  GameObject;
 var object	 			:GameObject[];
 var objetosOrdenados	:GameObject[];
 
-
+repetition = new float[14];
+percent	   = new float[14];
 		
 function Start () {
 	lastPoint = new Vector3(23,-0.5,0);
@@ -23,14 +26,19 @@ function Start () {
 	nextPieceofGroundX = 0;
 	lastObject = penObject = thirdObject = object[0] ;
 	podeInstanciar[0] = true;
-	
+	for(var i =0;i<object.length;i++){
+		repetition[i] = i;
+	}
+	for(var j =0;i<object.length;j++){
+		percent[j] = j;
+	}
 }
 
 
 
 	
 function Update () {
-	repetition = new int[objetosOrdenados.length];
+
 	if(timer >= 0.1)
 	{	
 		ordenaObjetos();
@@ -280,7 +288,7 @@ function podeFazer(){
 				podeInstanciar[7] = true;
 				podeInstanciar[8] = true;
 			}
-			
+			if(penObject.tag == "Hole" && thirdObject.tag == "Ground") podeInstanciar[2] = false;
 			if((thirdObject.name == "ground1") && (penObject == "ground1") && (lastObject.name == "ground1"))
 			{
 				podeInstanciar[0] = true;
@@ -500,8 +508,25 @@ function desenhaPaulo() : void
 
 do{
 		r = Random.Range(0, objetosOrdenados.Length);
+		for(chanceIndividual in repetition)
+		{
+			Debug.Log(chanceIndividual);
+			if(podeInstanciar[chanceIndividual] == true){
+				somaTotal += chanceIndividual; 
+			}
+		}
+		
+		for(chanceIndividual in percent)
+		{
+			Debug.Log(chanceIndividual + " numero 2");
+			if(podeInstanciar[chanceIndividual] == true){
+				percent[chanceIndividual] = (repetition[chanceIndividual] * 100)/somaTotal;
+			}
+		}
+		
 }
  while (podeInstanciar[r] == false);
+ 
 	detectaUltimos();
 switch(r)
 {
@@ -610,5 +635,5 @@ switch(r)
 		Instantiate(objetosOrdenados[0], new Vector3(lastPoint.x+objetosOrdenados[r].transform.localScale.x/2,-0.5,0),transform.rotation);
 		previousWidth = 1;	
 }
-
+somaTotal = 0;
 }
