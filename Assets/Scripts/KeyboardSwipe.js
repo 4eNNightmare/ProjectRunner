@@ -5,7 +5,7 @@ public var swipeUp: boolean;
 
 function Update () {
 
-	if(Input.GetKeyDown("down") && GameObject.Find("Player").GetComponent(PlayerController).extraJumpCountTMP > 0){
+	if(Input.GetKeyDown("down") && GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){
 		swipeDown = true;
 	}
 	

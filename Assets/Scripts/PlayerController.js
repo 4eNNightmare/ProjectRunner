@@ -42,6 +42,9 @@ function Update () {
 			   GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp){//...e ainda tiver pulos extras...
 				inputJump = true;//...ira pular...
 				extraJumpCountTMP--;//...mas subitraira um pulo extra.
+				if(isRolling){//...e se estiver rolando...
+					rollTimer = 0;//...ira cancelar o rolamento.
+				}
 				GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
 				GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeUp = false;
 				GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp = false;
