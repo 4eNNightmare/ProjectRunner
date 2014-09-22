@@ -1,7 +1,8 @@
-﻿#pragma strict
-var newPoint 			: 	 	  int;
+#pragma strict
 var previousWidth		:		  int;
 var r 					:		  int;
+var holechance			: 		  int;
+var totalchance			: 		  int;
 var repetition			:       float[];
 var percent				: 		float[];
 var somaTotal			:		float;
@@ -131,7 +132,7 @@ function podeFazer(){
 	{
 		case ("buraco1x1") :
 			podeInstanciar[0] = false;
-			if(penObject.name == "ground3" && penObject.name == "ground2") podeInstanciar[0] = true;
+			if(penObject.name == "ground3" || penObject.name == "ground2") podeInstanciar[0] = true;
 			if(thirdObject.name == "buraco1x1" || thirdObject.name == "buraco2x1") podeInstanciar[0] = false;
 			podeInstanciar[1] = false;
 			podeInstanciar[2] = false;
@@ -141,7 +142,6 @@ function podeFazer(){
 			podeInstanciar[6] = false;
 			podeInstanciar[7] = true;
 			podeInstanciar[8] = true;
-			if(penObject.name == "ground2") podeInstanciar[8] = true;
 			podeInstanciar[9] = false;
 			if(penObject.name == "ground3") podeInstanciar[9] = true;
 			podeInstanciar[10] = false;
@@ -274,7 +274,7 @@ function podeFazer(){
 			podeInstanciar[5] = false;
 			podeInstanciar[6] = false;
 			podeInstanciar[7] = true;
-			podeInstanciar[8] = false;
+			podeInstanciar[8] = true;
 			podeInstanciar[9] = false;
 			podeInstanciar[10] = false;
 			podeInstanciar[11] = false;
@@ -282,7 +282,7 @@ function podeFazer(){
 			podeInstanciar[13] = false;
 
 			if((thirdObject.name == "ground2")&&(penObject.name == "ground1")&&(lastObject.name == "ground1")) podeInstanciar[4] = false;podeInstanciar[7] = true;
-			if(penObject.tag == "Ground" && lastObject.tag == "Ground")podeInstanciar[0] = true;podeInstanciar[1] = true; podeInstanciar[2] = false;
+			if(penObject.tag == "Ground" && lastObject.tag == "Ground")podeInstanciar[0] = true;podeInstanciar[1] = true; podeInstanciar[2] = true;
 			if((thirdObject.name == "ground3") && ((penObject.tag == "Hole") ||(penObject.name == "ground2") || (penObject.tag == "Hole")))
 			{
 				podeInstanciar[7] = true;
@@ -303,6 +303,7 @@ function podeFazer(){
 				podeInstanciar[9] = false;
 				podeInstanciar[10] = false;
 			 	podeInstanciar[11] = true;
+			 	if(penObject.name == "Obstaculo2.1" && ((thirdObject.name == "Obstaculo2.1")||(thirdObject.name == "ground1")))podeInstanciar[11] = false;
 			 	podeInstanciar[12] = true;
 			 	podeInstanciar[13] = false;
 			}
@@ -363,6 +364,7 @@ function podeFazer(){
 			 podeInstanciar[10] = false;
 			 podeInstanciar[11] = false;
 			 podeInstanciar[12] = true;
+			 if(penObject.name == "Obstaculo2.2" && ((thirdObject.name == "Obstaculo2.2")||(thirdObject.name == "ground2"))) podeInstanciar[12]=false;
 			 podeInstanciar[13] = false;
 			}
 			if((thirdObject.name == "buraco2x1") && (penObject.name == "ground2")) podeInstanciar[9] = false;
@@ -398,9 +400,10 @@ function podeFazer(){
 				podeInstanciar[8] = true;
 				podeInstanciar[9] = true;
 				podeInstanciar[10] = true;
-				podeInstanciar[11] = true;
+				podeInstanciar[11] = false;
 				podeInstanciar[12] = false;
 				podeInstanciar[13] = true;
+				if(penObject.name == "Obstaculo2.3" && ((thirdObject.name == "Obstaculo2.3")||(thirdObject.name == "ground3"))) podeInstanciar[13]=false;
 			}
 			//podeInstanciar[6] = false;
 			//podeInstanciar[7] = false;
@@ -437,6 +440,7 @@ function podeFazer(){
 			podeInstanciar[9] = false;
 			podeInstanciar[10] = false;
 			podeInstanciar[11] = true;
+			if(lastObject.name == "Obstaculo2.1" && penObject.name == "Obstaculo2.1") podeInstanciar[11]=false;
 			podeInstanciar[12] = false;
 			podeInstanciar[13] = false;
 			break;
@@ -451,10 +455,11 @@ function podeFazer(){
 			podeInstanciar[6] = false;
 			podeInstanciar[7] = true;
 			podeInstanciar[8] = true;
-			podeInstanciar[9] = true;
+			podeInstanciar[9] = false;
 			podeInstanciar[10] = false;
 			podeInstanciar[11] = false;
 			podeInstanciar[12] = true;
+			if(lastObject.name == "Obstaculo2.2" && penObject.name == "Obstaculo2.2") podeInstanciar[12]=false;
 			podeInstanciar[13] = false;
 			break;
 			
@@ -473,6 +478,7 @@ function podeFazer(){
 			podeInstanciar[11] = false;
 			podeInstanciar[12] = false;
 			podeInstanciar[13] = true;
+			if(lastObject.name == "Obstaculo2.3" && penObject.name == "Obstaculo2.3") podeInstanciar[13]=false;
 			break;
 			
 		default :
@@ -505,24 +511,45 @@ function podeFazer(){
 
 function desenhaPaulo() : void
 {
-
+//######### gambiarra dos buracos ##########
+ r = Random.Range(0,totalchance);
+ //roda uma chance de buraco num total.
+ if(r > holechance)
+ 	{
+ 		podeInstanciar[0] = false;
+ 		podeInstanciar[1] = false;
+ 		podeInstanciar[2] = false;
+ 		podeInstanciar[3] = false;
+ 		podeInstanciar[4] = false;
+ 		podeInstanciar[5] = false;
+ 		podeInstanciar[6] = false;
+ 		holechance++;
+ 		//desativa os buracos e aumenta a chance do buraco na proxima tentativa
+ 	}
+ //a chance do buraco aumenta conforme r vai caindo.
+ r = Random.Range(0,holechance);
+ //roda uma nova chance para buracos.
+ if(holechance > r) holechance--;
+ //se o buraco for maior que r, a chance tbm diminui ( mantem um numero bom de buracos)
+ if(holechance < 3) holechance = 35;
+ // se a incidencia de buracos reduzirem muito, seta holechance novamente para 12 em 25.
 do{
 		r = Random.Range(0, objetosOrdenados.Length);
-		for(chanceIndividual in repetition)
-		{
-			Debug.Log(chanceIndividual);
-			if(podeInstanciar[chanceIndividual] == true){
-				somaTotal += chanceIndividual; 
-			}
-		}
+		//for(chanceIndividual in repetition)
+		//{
+		//	Debug.Log(chanceIndividual);
+	//		if(podeInstanciar[chanceIndividual] == true){
+	//			somaTotal += chanceIndividual; 
+	//		}
+		//}
 		
-		for(chanceIndividual in percent)
-		{
-			Debug.Log(chanceIndividual + " numero 2");
-			if(podeInstanciar[chanceIndividual] == true){
-				percent[chanceIndividual] = (repetition[chanceIndividual] * 100)/somaTotal;
-			}
-		}
+		//for(chanceIndividual in percent)
+		//{
+		//	Debug.Log(chanceIndividual + " numero 2");
+		//	if(podeInstanciar[chanceIndividual] == true){
+		//		percent[chanceIndividual] = (repetition[chanceIndividual] * 100)/somaTotal;
+		//	}
+		//}
 		
 }
  while (podeInstanciar[r] == false);
