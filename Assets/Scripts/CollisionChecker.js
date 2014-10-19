@@ -83,10 +83,7 @@ function Update () {
 			}
 		}
 	}
-//	else{
-//		canClimb = false;
-//	}
-	
+
 	if(Physics.SphereCast(rayCeiling, colliderRadius, hitCeiling, collisionDistanceCeiling, rayCastLayer)){//Detecta se bateu o topo da cabeça
 		if(!GetComponent(PlayerController).isRolling){
 			Debug.DrawLine(headCenterPoint, hitCeiling.point, Color.yellow);
@@ -95,6 +92,8 @@ function Update () {
 			}
 		}
 	}
+	
+
 
 	if(bodyHorizontalCollision){
 		if(!canClimb){//bateu de frente e nao pode escalar (canClimb = false)
@@ -137,9 +136,10 @@ function OnCollisionEnter(collision : Collision) {
 	for (contact in collision.contacts) {
 		var p1 : Vector3 = contact.point;
 		var p2 : Vector3 = contact.point + contact.normal;
-		if(Vector2.Angle(p1, p2) < 0.09){
+		if(Vector2.Angle(p1, p2) < 0.2){
 			bodyHorizontalCollision = true;	
 		   	Debug.DrawLine(p1, p2, Color.red, 5, false);
+		   	print(Vector2.Angle(p1, p2));
 		}
 		else{
 			bodyHorizontalCollision = false;
