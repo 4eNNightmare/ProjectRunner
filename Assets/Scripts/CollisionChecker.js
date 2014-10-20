@@ -86,7 +86,7 @@ function Update () {
 
 	if(Physics.SphereCast(rayCeiling, colliderRadius, hitCeiling, collisionDistanceCeiling, rayCastLayer)){//Detecta se bateu o topo da cabeça
 		if(!GetComponent(PlayerController).isRolling){
-			Debug.DrawLine(headCenterPoint, hitCeiling.point, Color.yellow);
+			Debug.DrawLine(headCenterPoint, hitCeiling.point, Color.cyan);
 			if(!bodyHorizontalCollision){
 				headVerticalCollision = true;
 			}
@@ -139,7 +139,6 @@ function OnCollisionEnter(collision : Collision) {
 		if(Vector2.Angle(p1, p2) < 0.2){
 			bodyHorizontalCollision = true;	
 		   	Debug.DrawLine(p1, p2, Color.red, 5, false);
-		   	print(Vector2.Angle(p1, p2));
 		}
 		else{
 			bodyHorizontalCollision = false;

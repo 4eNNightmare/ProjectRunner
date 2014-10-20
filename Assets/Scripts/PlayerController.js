@@ -13,55 +13,44 @@ private var rollTimer : float;
 function Update () {
 	if(GetComponent(GameStateController).gameState != GameState.GameOver){
 	
-		if(!GetComponent(CollisionChecker).isGrounded && GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeAirDown){//[AirDown]
-			inputAirDown = true;
-			GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeAirDown = false;
-		}
-		if(GetComponent(CollisionChecker).isGrounded && !isRolling &&
-		   GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown || 
-		   GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeDown ||
-		   GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeDown){//[ROLAR]
-		   		inputRoll = true;
-				GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeDown = false;
-				GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeDown = false;
-				GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeDown = false;
-		}
-		
-		if(GetComponent(CollisionChecker).isGrounded){//[PULAR] se estiver no chao...
-			if(GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp ||
-			   GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeUp || 
-			   GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp){//...e o swipe for para cima...
-				inputJump = true;//...ira pular...
-				if(isRolling){//...e se estiver rolando...
-					rollTimer = 0;//...ira cancelar o rolamento.
+		//==================[INPUT DETECTION]================
+		if(Input.GetKeyDown("down")){
+			if(GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){
+				if(!isRolling){
+					inputRoll = true;
 				}
-				GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
-				GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeUp = false;
-				GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp = false;
 			}
-			extraJumpCountTMP = extraJumpCount; //enquanto estiver no chao reseta os pulos extras.
-		}
-		else{//[PULO EXTRA] Se estiver no ar...
-			if(extraJumpCountTMP > 0 && 
-			   GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp || 
-			   GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeUp || 
-			   GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp){//...e ainda tiver pulos extras...
-				inputJump = true;//...ira pular...
-				extraJumpCountTMP--;//...mas subitraira um pulo extra.
-				if(isRolling){//...e se estiver rolando...
-					rollTimer = 0;//...ira cancelar o rolamento.
-				}
-				GameObject.Find("Player/Main Camera").GetComponent(TouchSwipe).swipeUp = false;
-				GameObject.Find("Player/Main Camera").GetComponent(MouseSwipe).swipeUp = false;
-				GameObject.Find("Player/Main Camera").GetComponent(KeyboardSwipe).swipeUp = false;
+			else{
+				inputAirDown = true;
 			}
 		}
 		
-		if(isRolling){
-			rollTimer -= Time.deltaTime;
-			if(rollTimer <= 0){
-				GameObject.Find("Player/PlayerCollider").transform.position.y = GameObject.Find("Player/PlayerCollider").transform.position.y + 0.5;
-				GameObject.Find("Player/PlayerCollider").transform.GetComponent(CapsuleCollider).height = 2;
+		if(Input.GetKeyDown("up") && extraJumpCountTMP > 0){
+			inputJump = true;
+		}
+		
+		//==================[JUMP]======================
+
+		if(inputJump){
+			if(isRolling){//...se estiver rolando...
+				rollTimer = 0;//...ira cancelar o rolamento.
+			}
+			
+			if(!GetComponent(CollisionChecker).isGrounded){//------[EXTRA JUMP]----- Se estiver no ar...
+				extraJumpCountTMP--;//...subtraira um pulo extra.
+			}
+		}
+		
+		if(GetComponent(CollisionChecker).isGrounded){//enquanto estiver no chao...
+			extraJumpCountTMP = extraJumpCount; //reseta os pulos extras.
+		}
+
+		//==================[ROLL]========================
+		if(isRolling){//se esta rolando...
+			rollTimer -= Time.deltaTime;//...subtrai a duraçao do rolamento...
+			if(rollTimer <= 0){//...se o tempo for menor que zero...
+				GameObject.Find("Player/PlayerCollider").transform.position.y = GameObject.Find("Player/PlayerCollider").transform.position.y + 0.5;//...desloca levemente o colisor para cima...
+				GameObject.Find("Player/PlayerCollider").transform.GetComponent(CapsuleCollider).height = 2;//...e retorna o tamanho original do colisor.
 				isRolling = false;
 			}
 		}
@@ -70,6 +59,7 @@ function Update () {
 
 function FixedUpdate () {
 	
+	//=======================[ROLL]========================
 	if(inputRoll && !isRolling){
 		isRolling = true;
 		rollTimer = rollDuration;
@@ -79,18 +69,23 @@ function FixedUpdate () {
 		inputJump = false;
 	}
 	
+	//========================[JUMP]=======================
 	if(inputJump){
 		rigidbody.velocity = Vector3(0, jumpForce, 0);
 		inputJump = false;
 	}
 	
+	//=================[DOWNWARD STRIKE]====================
 	if(inputAirDown){
 		rigidbody.velocity = Vector3(0, jumpForce*-2.5, 0);
 		inputAirDown = false;
 	}
 	
-	
+	//========================[WALK]=======================
 	if(!GetComponent(CollisionChecker).fatalCollision){
 		rigidbody.MovePosition(rigidbody.position + moveSpeed*Time.deltaTime);
+		if(rigidbody.velocity.x != 0){ //Tenta garantir que o jogador nao ira ganhar velocidade inesperadamente ao colidir
+			rigidbody.velocity.x = 0;
+		}
 	}
 }
