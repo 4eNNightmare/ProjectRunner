@@ -1,5 +1,8 @@
 ﻿#pragma strict
 
+var groundImpactParticle : GameObject;
+private var impacted : boolean = false;
+
 function Start () {
 
 }
@@ -30,6 +33,16 @@ function Update () {
 	else{
 		GameObject.Find("Player/PlayerCollider").transform.renderer.enabled = false;
 	}
-
+	
+	if(GetComponent(CollisionChecker).isGrounded){
+		if(!impacted){
+			var instace = GameObject.Instantiate(groundImpactParticle, new Vector3(transform.position.x, transform.position.y-1, transform.position.z), transform.rotation);
+			instace.transform.rotation = Quaternion.Euler(-90,0,0);
+		}
+		impacted = true;
+	}
+	else{
+		impacted = false;
+	}
 
 }
