@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
-var groundImpactParticle : GameObject;
+var downwardStrikeImpactParticle : GameObject;
+var jumpImpactParticle : GameObject;
 private var impacted : boolean = false;
 
 function Start () {
@@ -25,7 +26,7 @@ function Update () {
 		transform.renderer.material.color = new Color(0,1,0,1);
 	}
 	
-	if(GetComponent(PlayerController).isRolling){
+	if(GetComponent(PlayerController).action == GetComponent(PlayerController).action.Roll){
 		transform.renderer.material.color = new Color(0,0,0,0);
 		GameObject.Find("Player/PlayerCollider").transform.renderer.material.color = new Color(0,0,1,1);
 		GameObject.Find("Player/PlayerCollider").transform.renderer.enabled = true;
@@ -36,13 +37,26 @@ function Update () {
 	
 	if(GetComponent(CollisionChecker).isGrounded){
 		if(!impacted){
-			var instace = GameObject.Instantiate(groundImpactParticle, new Vector3(transform.position.x, transform.position.y-1, transform.position.z), transform.rotation);
-			instace.transform.rotation = Quaternion.Euler(-90,0,0);
+			ParticleInstantiate();
 		}
 		impacted = true;
 	}
 	else{
 		impacted = false;
 	}
+}
 
+function ParticleInstantiate(){
+	var particle : GameObject;
+	switch(GetComponent(PlayerController).action){
+		case GetComponent(PlayerController).action.DownwardStrike:
+			particle = downwardStrikeImpactParticle;
+		break;
+		default:
+			particle = jumpImpactParticle;
+		break;
+	}
+	if(particle != null){
+		GameObject.Instantiate(particle, new Vector3(transform.position.x, transform.position.y-0.75, transform.position.z), Quaternion.Euler(-90,0,0));
+	}
 }

@@ -29,7 +29,7 @@ function Update () {
 	
 	colliderRadius = transformCollider.GetComponent(CapsuleCollider).radius;
 	colliderHeight = transformCollider.GetComponent(CapsuleCollider).height;
-	if(!GetComponent(PlayerController).isRolling){//Deternina a posiçao central do colisor da cabeça e corpo
+	if(GetComponent(PlayerController).action != GetComponent(PlayerController).action.Roll){//Deternina a posiçao central do colisor da cabeça e corpo
 		headCenterPoint = new Vector3(transformCollider.position.x, transformCollider.position.y + colliderHeight/4, transformCollider.position.z);
 		bodyCenterPoint = new Vector3(transformCollider.position.x, transformCollider.position.y - colliderHeight/4, transformCollider.position.z);
 		rayGroundOrigin = headCenterPoint;
@@ -85,7 +85,7 @@ function Update () {
 	}
 
 	if(Physics.SphereCast(rayCeiling, colliderRadius, hitCeiling, collisionDistanceCeiling, rayCastLayer)){//Detecta se bateu o topo da cabeça
-		if(!GetComponent(PlayerController).isRolling){
+		if(GetComponent(PlayerController).action != GetComponent(PlayerController).action.Roll){
 			Debug.DrawLine(headCenterPoint, hitCeiling.point, Color.cyan);
 			if(!bodyHorizontalCollision){
 				headVerticalCollision = true;
