@@ -7,9 +7,9 @@ public var followSpeed : float;
 function Start(){
 	if(GameObject.Find("Main Camera")){
 		Destroy(GameObject.Find("Main Camera"));
-		cam = GameObject.Instantiate(cameraPrefab, transform.position + deslocation, Quaternion.identity);
-		cam.name = "Main Camera";
 	}
+	cam = GameObject.Instantiate(cameraPrefab, transform.position + deslocation, Quaternion.identity);
+	cam.name = "Main Camera";
 }
 
 function FixedUpdate () {
