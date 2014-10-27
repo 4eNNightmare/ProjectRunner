@@ -162,22 +162,22 @@ function OnDrawGizmos() {
 	Gizmos.DrawSphere(new Vector3(transformCollider.position.x + colliderRadius, transformCollider.position.y + colliderHeight*10, transformCollider.position.z), 0.25);
 }
 
-function OnGUI(){
-	var boxWidth : float = 200;
-	var boxHeight : float = Screen.height;
-	//GUI.skin = guiSkin;
-	GUI.Box (new Rect (Screen.width - boxWidth,0,boxWidth,boxHeight),
-	"isGrounded: "+isGrounded+
-	"[Position]"+
-	"\nx: " + transform.position.x +
-	"\ny: " + transform.position.y +
-	"\n"+
-	"[Climb]"+
-	"\nWallHeight: " + hitWallHeightCheckerDistance.ToString("F2")+ "("+maxHeightStep+")" +
-	"\ncanClimb: " + canClimb +
-	"\ncause of death:\n "+causeOfDeath+
-	"\n"+
-	"[Jump]"+
-	"\nExtra Jump: " + GetComponent(PlayerController).extraJumpCountTMP + "("+GetComponent(PlayerController).extraJumpCount+")"
-	);
-}
+//function OnGUI(){
+//	var boxWidth : float = 200;
+//	var boxHeight : float = Screen.height;
+//	//GUI.skin = guiSkin;
+//	GUI.Box (new Rect (Screen.width - boxWidth,0,boxWidth,boxHeight),
+//	"isGrounded: "+isGrounded+
+//	"[Position]"+
+//	"\nx: " + transform.position.x +
+//	"\ny: " + transform.position.y +
+//	"\n"+
+//	"[Climb]"+
+//	"\nWallHeight: " + hitWallHeightCheckerDistance.ToString("F2")+ "("+maxHeightStep+")" +
+//	"\ncanClimb: " + canClimb +
+//	"\ncause of death:\n "+causeOfDeath+
+//	"\n"+
+//	"[Jump]"+
+//	"\nExtra Jump: " + GetComponent(PlayerController).extraJumpCountTMP + "("+GetComponent(PlayerController).extraJumpCount+")"
+//	);
+//}
