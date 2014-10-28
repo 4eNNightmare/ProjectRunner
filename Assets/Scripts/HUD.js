@@ -10,6 +10,8 @@ function Start(){
 
 function OnGUI(){
 	GUI.skin = guiSkin;
-	score = transform.position.x - initialPositionX;
+	if(transform.position.x - initialPositionX > score){
+		score = transform.position.x - initialPositionX;
+	}
 	GUI.Label (Rect (Screen.width/2 - 50, 10, 100, 20), ""+score);	
 }
