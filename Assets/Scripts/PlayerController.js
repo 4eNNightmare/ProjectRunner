@@ -18,9 +18,10 @@ function Update () {
 	if(GetComponent(GameStateController).gameState != GameState.GameOver){
 	
 		//==================[INPUT DETECTION]================
-		if(Input.GetKeyDown("down") && action != actionState.Roll){//Se apertar para baixo e nao estiver rolando...
-			if(GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded){//...se estiver no chao...
+		if(GetComponent(ClickDetection).InputDown && action != actionState.Roll){//Se apertar para baixo e nao estiver rolando...
+			if(GetComponent(CollisionChecker).isGrounded){//...se estiver no chao...
 				inputRoll = true;//...pode rolar.
+				GetComponent(ClickDetection).InputDown = false;
 			}
 			else if(action != actionState.DownwardStrike){//... se estiver no ar e nao estiver em downwardStrike...
 				inputAirDown = true;//...pode downwardStrike.
@@ -28,8 +29,9 @@ function Update () {
 		}
 		
 		
-		if(Input.GetKeyDown("up") && extraJumpCountTMP > 0){
+		if(GetComponent(ClickDetection).InputUp && extraJumpCountTMP > 0){
 			inputJump = true;
+			GetComponent(ClickDetection).InputUp = false;
 		}
 		
 		//==================[JUMP]======================
