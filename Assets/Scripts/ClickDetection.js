@@ -20,7 +20,6 @@ function Start () {
 	InputRight	= false;
 	InputUp	  	= false;
 	FormaBotao = new Vector2[5];
-	StyleLayout = LayoutState.Rectangle;
 	larguraMaxima = Screen.width;
 	alturaMaxima  = Screen.height;
 	FormaBotao[0] = new Vector2(larguraMaxima-larguraMaxima,		alturaMaxima-alturaMaxima)	;
@@ -28,37 +27,35 @@ function Start () {
 	FormaBotao[2] = new Vector2(larguraMaxima-larguraMaxima,					 alturaMaxima)	;
 	FormaBotao[3] = new Vector2(larguraMaxima,									 alturaMaxima)	;
 	FormaBotao[4] = new Vector2(larguraMaxima/2,							   alturaMaxima/2)	;
-
 }
 
 function Update () {
-MousePosition = Input.mousePosition;
-ClickPosition.x = MousePosition.x;
-ClickPosition.y = MousePosition.y - alturaMaxima;
-if(ClickPosition.y < 0) ClickPosition.y = -ClickPosition.y;
 
-//======================= LAYOUT DO RETANGULO =====================//
-if(StyleLayout == LayoutState.Rectangle){
-	if(Input.GetButtonDown ("Fire1")){
-	 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) InputUp = true;
-	 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) print('null2');
-	 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) InputDown=true;
-	 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) print('null3');
-	 // caso caia na divisa de x ou y nao faz nada.
+	MousePosition = Input.mousePosition;
+	ClickPosition.x = MousePosition.x;
+	ClickPosition.y = MousePosition.y - alturaMaxima;
+	
+	if(ClickPosition.y < 0) ClickPosition.y = -ClickPosition.y;
+	
+	if(Input.GetMouseButtonDown(0)){
+		//======================= LAYOUT DO RETANGULO =====================//
+		if(StyleLayout == LayoutState.Rectangle){
+			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) InputUp = true;
+			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) print('null2');
+			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) InputDown=true;
+			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) print('null3');
+			 // caso caia na divisa de x ou y nao faz nada.
+		}
+		//======================= LAYOUT DO TRIANGULO =====================//
+		if(StyleLayout == LayoutState.Triangle){
+				if( PointInTriangle(ClickPosition,FormaBotao[0],FormaBotao[4],FormaBotao[2]) ) print('BTN1'); //esquerda
+				if( PointInTriangle(ClickPosition,FormaBotao[0],FormaBotao[4],FormaBotao[1]) ) InputUp   = true; //cima
+				if( PointInTriangle(ClickPosition,FormaBotao[1],FormaBotao[4],FormaBotao[3]) ) print('BTN3'); //direita
+				if( PointInTriangle(ClickPosition,FormaBotao[3],FormaBotao[4],FormaBotao[2]) ) InputDown = true; //baixo
+		}
 	}
 }
-//======================= LAYOUT DO TRIANGULO =====================//
-if(StyleLayout == LayoutState.Triangle){
-	if(Input.GetButtonDown ("Fire1")){
-		if( PointInTriangle(ClickPosition,FormaBotao[0],FormaBotao[4],FormaBotao[2]) ) print('BTN1'); //esquerda
-		if( PointInTriangle(ClickPosition,FormaBotao[0],FormaBotao[4],FormaBotao[1]) ) InputUp   = true; //cima
-		if( PointInTriangle(ClickPosition,FormaBotao[1],FormaBotao[4],FormaBotao[3]) ) print('BTN3'); //direita
-		if( PointInTriangle(ClickPosition,FormaBotao[3],FormaBotao[4],FormaBotao[2]) ) InputDown = true; //baixo
-	}
 
-
-}
-}
 
 //==================== Calcula se esta dentro do triangulo =============================//
 function area(p1 : Vector2,p2 :Vector2,p3 :Vector2)

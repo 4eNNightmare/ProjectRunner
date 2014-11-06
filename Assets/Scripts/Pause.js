@@ -15,21 +15,19 @@ var continuar: Texture2D;
 var alteraBotao: GUISkin;
 
 function Start () {
-altura = 100;
-largura = 100;
-
-posiX = Screen.width/2 - largura/2;
-posiY = Screen.height/2 - altura/2;
-
-controlePause = true;
-botao = true;
+	controlePause = true;
+	botao = true;
 }
-function Update (){
-}
+
 function OnGUI(){
+	altura = (Screen.height+Screen.width)/30;
+	largura = altura;
+	posiX = Screen.width - altura;
+	posiY = 0;
+	
 	if(botao){
 		GUI.skin=alteraBotao;
-		if (GUI.Button(new Rect(Screen.width-170, 10, largura, altura), pausar)){
+		if (GUI.Button(new Rect(posiX, posiY, largura, altura), pausar)){
 			if (controlePause){
     			Time.timeScale = 0;
     			controlePause = false;
@@ -41,7 +39,7 @@ function OnGUI(){
 		if(controlePause == false){
 			GUI.Box(Rect(0, 0, Screen.width, Screen.height)," ");
 			GUI.skin=alteraBotao;
-			if(GUI.Button(Rect(Screen.width-170, 10, largura, altura), continuar)){
+			if(GUI.Button(Rect(posiX, posiY, largura, altura), continuar)){
 				Time.timeScale = 1;
 				controlePause = true;
 				botao = true;

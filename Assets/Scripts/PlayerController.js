@@ -25,6 +25,7 @@ function Update () {
 			}
 			else if(action != actionState.DownwardStrike){//... se estiver no ar e nao estiver em downwardStrike...
 				inputAirDown = true;//...pode downwardStrike.
+				GetComponent(ClickDetection).InputDown = false;
 			}
 		}
 		
