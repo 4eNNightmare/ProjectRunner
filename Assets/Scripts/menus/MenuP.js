@@ -24,23 +24,30 @@ botao = true;
 function Update () {
 }
 function OnGUI(){
-	if (GUI.Button(new Rect(posiX, posiY-50, largura, altura), "fase1")){
+	if (GUI.Button(new Rect(posiX, posiY-75, largura, altura), "INICIAR JOGO")){
+		Application.LoadLevel(1);
+		 faseAtualNumber = 1;
+		
 		/*if(newgame){
 			GUI.Box(Rect(posiX, posiY-50, largura, altura),"Todo progresso sera \n perdido deseja continuar?");
 			if (GUI.Button(new Rect(posiX, posiY-50, largura, altura), "Sim")){
-    			*/Application.LoadLevel(1);
+    			Application.LoadLevel(1);
 				faseAtualNumber = 1;
-			/*}
+			}
+		}
 			if (GUI.Button(new Rect(posiX, posiY-50, largura, altura), "Nao")){
     			Application.LoadLevel(2);
 				faseAtualNumber = 2;
 			}
     	}*/
     }
-    if (GUI.Button(new Rect(posiX, posiY, largura, altura), "fase2")){
-			Application.LoadLevel(2);
+    if (GUI.Button(new Rect(posiX, posiY-25, largura, altura), "SELEÇAO \nDE FASES")){
+			Application.LoadLevel("SelecaoFases");
     }
-    if(GUI.Button(Rect(posiX, posiY+50, largura, altura), "Sair")){
+    if (GUI.Button(new Rect(posiX, posiY+25, largura, altura), "CREDITOS")){
+			Application.LoadLevel("Creditos");
+    }
+    if(GUI.Button(Rect(posiX, posiY+75, largura, altura), "SAIR")){
     	Application.Quit();
 	}
 }
