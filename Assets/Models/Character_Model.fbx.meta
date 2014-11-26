@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: 66ea6bc97cd202e499b7cc516e2ce531
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: AnteBracoDireito
+    100002: AnteBracoEsquerdo
+    100004: axis
+    100006: bacia
+    100008: BracoDireito
+    100010: BracoEsquerdo
+    100012: cervivais
+    100014: clavicula_R
+    100016: clavivula_L
+    100018: coccix
+    100020: coccix.001
+    100022: colunaAlta
+    100024: colunaBaixa
+    100026: cotovelo_L
+    100028: cotovelo_R
+    100030: cranio
+    100032: 'Cranio '
+    100034: //RootNode
+    100036: falange_L
+    100038: falange_R
+    100040: falangeM_L
+    100042: falangeM_R
+    100044: falangeP_L
+    100046: falangeP_R
+    100048: femur_L
+    100050: femur_R
+    100052: femurDireito
+    100054: femurEsquerdo
+    100056: joelho_L
+    100058: joelho_R
+    100060: lombares
+    100062: mandibula
+    100064: mandibula 1
+    100066: mandibula.001
+    100068: mao_L
+    100070: mao_R
+    100072: metacarpo_L
+    100074: metacarpo_R
+    100076: omoplatoDireito
+    100078: omoplatoEsquerdo
+    100080: pe_L
+    100082: pe_R
+    100084: peDireito
+    100086: peEsquerdo
+    100088: quadril
+    100090: radio_L
+    100092: radio_R
+    100094: sacro
+    100096: sombraInf_L
+    100098: sombraInf_R
+    100100: sombraSup_L
+    100102: sombraSup_R
+    100104: tibia_L
+    100106: tibia_R
+    100108: toracicas
+    100110: torax
+    100112: torso_L
+    100114: torso_R
+    100116: umero_L
+    100118: umero_R
+    400000: AnteBracoDireito
+    400002: AnteBracoEsquerdo
+    400004: axis
+    400006: bacia
+    400008: BracoDireito
+    400010: BracoEsquerdo
+    400012: cervivais
+    400014: clavicula_R
+    400016: clavivula_L
+    400018: coccix
+    400020: coccix.001
+    400022: colunaAlta
+    400024: colunaBaixa
+    400026: cotovelo_L
+    400028: cotovelo_R
+    400030: cranio
+    400032: 'Cranio '
+    400034: //RootNode
+    400036: falange_L
+    400038: falange_R
+    400040: falangeM_L
+    400042: falangeM_R
+    400044: falangeP_L
+    400046: falangeP_R
+    400048: femur_L
+    400050: femur_R
+    400052: femurDireito
+    400054: femurEsquerdo
+    400056: joelho_L
+    400058: joelho_R
+    400060: lombares
+    400062: mandibula
+    400064: mandibula 1
+    400066: mandibula.001
+    400068: mao_L
+    400070: mao_R
+    400072: metacarpo_L
+    400074: metacarpo_R
+    400076: omoplatoDireito
+    400078: omoplatoEsquerdo
+    400080: pe_L
+    400082: pe_R
+    400084: peDireito
+    400086: peEsquerdo
+    400088: quadril
+    400090: radio_L
+    400092: radio_R
+    400094: sacro
+    400096: sombraInf_L
+    400098: sombraInf_R
+    400100: sombraSup_L
+    400102: sombraSup_R
+    400104: tibia_L
+    400106: tibia_R
+    400108: toracicas
+    400110: torax
+    400112: torso_L
+    400114: torso_R
+    400116: umero_L
+    400118: umero_R
+    4300000: AnteBracoDireito
+    4300002: AnteBracoEsquerdo
+    4300004: bacia
+    4300006: BracoDireito
+    4300008: BracoEsquerdo
+    4300010: colunaAlta
+    4300012: colunaBaixa
+    4300014: 'Cranio '
+    4300016: femurDireito
+    4300018: femurEsquerdo
+    4300020: mandibula
+    4300022: omoplatoDireito
+    4300024: omoplatoEsquerdo
+    4300026: peDireito
+    4300028: peEsquerdo
+    4300030: torax
+    7400000: run
+    7400002: jump_Up
+    7400004: roll
+    7400006: DownWard
+    7400008: quadril|quadrilAction3
+    7400010: Jump_Down
+    7400012: JumpAir_Up
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: AnteBracoDireito
+    13700002: AnteBracoEsquerdo
+    13700004: bacia
+    13700006: BracoDireito
+    13700008: BracoEsquerdo
+    13700010: colunaAlta
+    13700012: colunaBaixa
+    13700014: 'Cranio '
+    13700016: femurDireito
+    13700018: femurEsquerdo
+    13700020: mandibula
+    13700022: omoplatoDireito
+    13700024: omoplatoEsquerdo
+    13700026: peDireito
+    13700028: peEsquerdo
+    13700030: torax
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: quadril|quadrilAction
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AnteBracoDireito
+        weight: 1
+      - path: AnteBracoEsquerdo
+        weight: 1
+      - path: bacia
+        weight: 1
+      - path: BracoDireito
+        weight: 1
+      - path: BracoEsquerdo
+        weight: 1
+      - path: colunaAlta
+        weight: 1
+      - path: colunaBaixa
+        weight: 1
+      - path: 'Cranio '
+        weight: 1
+      - path: femurDireito
+        weight: 1
+      - path: femurEsquerdo
+        weight: 1
+      - path: mandibula
+        weight: 1
+      - path: omoplatoDireito
+        weight: 1
+      - path: omoplatoEsquerdo
+        weight: 1
+      - path: peDireito
+        weight: 1
+      - path: peEsquerdo
+        weight: 1
+      - path: quadril
+        weight: 1
+      - path: quadril/coccix
+        weight: 1
+      - path: quadril/coccix/femur_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L/falange_L
+        weight: 1
+      - path: quadril/coccix/femur_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R/falange_R
+        weight: 1
+      - path: quadril/coccix/sacro
+        weight: 1
+      - path: quadril/coccix/sacro/lombares
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula
+          1
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula.001
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L/sombraSup_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R/sombraSup_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeM_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeP_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeM_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeP_L
+        weight: 1
+      - path: quadril/coccix.001
+        weight: 1
+      - path: quadril/mao_L
+        weight: 1
+      - path: quadril/mao_L/cotovelo_L
+        weight: 1
+      - path: quadril/mao_R
+        weight: 1
+      - path: quadril/mao_R/cotovelo_R
+        weight: 1
+      - path: quadril/pe_L
+        weight: 1
+      - path: quadril/pe_L/joelho_L
+        weight: 1
+      - path: quadril/pe_R
+        weight: 1
+      - path: quadril/pe_R/joelho_R
+        weight: 1
+      - path: torax
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: roll
+      takeName: quadril|quadrilAction
+      firstFrame: 64
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AnteBracoDireito
+        weight: 1
+      - path: AnteBracoEsquerdo
+        weight: 1
+      - path: bacia
+        weight: 1
+      - path: BracoDireito
+        weight: 1
+      - path: BracoEsquerdo
+        weight: 1
+      - path: colunaAlta
+        weight: 1
+      - path: colunaBaixa
+        weight: 1
+      - path: 'Cranio '
+        weight: 1
+      - path: femurDireito
+        weight: 1
+      - path: femurEsquerdo
+        weight: 1
+      - path: mandibula
+        weight: 1
+      - path: omoplatoDireito
+        weight: 1
+      - path: omoplatoEsquerdo
+        weight: 1
+      - path: peDireito
+        weight: 1
+      - path: peEsquerdo
+        weight: 1
+      - path: quadril
+        weight: 1
+      - path: quadril/coccix
+        weight: 1
+      - path: quadril/coccix/femur_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L/falange_L
+        weight: 1
+      - path: quadril/coccix/femur_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R/falange_R
+        weight: 1
+      - path: quadril/coccix/sacro
+        weight: 1
+      - path: quadril/coccix/sacro/lombares
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula
+          1
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula.001
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L/sombraSup_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R/sombraSup_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeM_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeP_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeM_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeP_L
+        weight: 1
+      - path: quadril/coccix.001
+        weight: 1
+      - path: quadril/mao_L
+        weight: 1
+      - path: quadril/mao_L/cotovelo_L
+        weight: 1
+      - path: quadril/mao_R
+        weight: 1
+      - path: quadril/mao_R/cotovelo_R
+        weight: 1
+      - path: quadril/pe_L
+        weight: 1
+      - path: quadril/pe_L/joelho_L
+        weight: 1
+      - path: quadril/pe_R
+        weight: 1
+      - path: quadril/pe_R/joelho_R
+        weight: 1
+      - path: torax
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: DownWard
+      takeName: quadril|quadrilAction
+      firstFrame: 137
+      lastFrame: 144
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AnteBracoDireito
+        weight: 1
+      - path: AnteBracoEsquerdo
+        weight: 1
+      - path: bacia
+        weight: 1
+      - path: BracoDireito
+        weight: 1
+      - path: BracoEsquerdo
+        weight: 1
+      - path: colunaAlta
+        weight: 1
+      - path: colunaBaixa
+        weight: 1
+      - path: 'Cranio '
+        weight: 1
+      - path: femurDireito
+        weight: 1
+      - path: femurEsquerdo
+        weight: 1
+      - path: mandibula
+        weight: 1
+      - path: omoplatoDireito
+        weight: 1
+      - path: omoplatoEsquerdo
+        weight: 1
+      - path: peDireito
+        weight: 1
+      - path: peEsquerdo
+        weight: 1
+      - path: quadril
+        weight: 1
+      - path: quadril/coccix
+        weight: 1
+      - path: quadril/coccix/femur_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L/falange_L
+        weight: 1
+      - path: quadril/coccix/femur_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R/falange_R
+        weight: 1
+      - path: quadril/coccix/sacro
+        weight: 1
+      - path: quadril/coccix/sacro/lombares
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula
+          1
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula.001
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L/sombraSup_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R/sombraSup_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeM_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeP_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeM_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeP_L
+        weight: 1
+      - path: quadril/coccix.001
+        weight: 1
+      - path: quadril/mao_L
+        weight: 1
+      - path: quadril/mao_L/cotovelo_L
+        weight: 1
+      - path: quadril/mao_R
+        weight: 1
+      - path: quadril/mao_R/cotovelo_R
+        weight: 1
+      - path: quadril/pe_L
+        weight: 1
+      - path: quadril/pe_L/joelho_L
+        weight: 1
+      - path: quadril/pe_R
+        weight: 1
+      - path: quadril/pe_R/joelho_R
+        weight: 1
+      - path: torax
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump_Down
+      takeName: quadril|quadrilAction
+      firstFrame: 35
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AnteBracoDireito
+        weight: 1
+      - path: AnteBracoEsquerdo
+        weight: 1
+      - path: bacia
+        weight: 1
+      - path: BracoDireito
+        weight: 1
+      - path: BracoEsquerdo
+        weight: 1
+      - path: colunaAlta
+        weight: 1
+      - path: colunaBaixa
+        weight: 1
+      - path: 'Cranio '
+        weight: 1
+      - path: femurDireito
+        weight: 1
+      - path: femurEsquerdo
+        weight: 1
+      - path: mandibula
+        weight: 1
+      - path: omoplatoDireito
+        weight: 1
+      - path: omoplatoEsquerdo
+        weight: 1
+      - path: peDireito
+        weight: 1
+      - path: peEsquerdo
+        weight: 1
+      - path: quadril
+        weight: 1
+      - path: quadril/coccix
+        weight: 1
+      - path: quadril/coccix/femur_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L/falange_L
+        weight: 1
+      - path: quadril/coccix/femur_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R/falange_R
+        weight: 1
+      - path: quadril/coccix/sacro
+        weight: 1
+      - path: quadril/coccix/sacro/lombares
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula
+          1
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula.001
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L/sombraSup_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R/sombraSup_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeM_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeP_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeM_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeP_L
+        weight: 1
+      - path: quadril/coccix.001
+        weight: 1
+      - path: quadril/mao_L
+        weight: 1
+      - path: quadril/mao_L/cotovelo_L
+        weight: 1
+      - path: quadril/mao_R
+        weight: 1
+      - path: quadril/mao_R/cotovelo_R
+        weight: 1
+      - path: quadril/pe_L
+        weight: 1
+      - path: quadril/pe_L/joelho_L
+        weight: 1
+      - path: quadril/pe_R
+        weight: 1
+      - path: quadril/pe_R/joelho_R
+        weight: 1
+      - path: torax
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpAir_Up
+      takeName: quadril|quadrilAction
+      firstFrame: 23
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: AnteBracoDireito
+        weight: 1
+      - path: AnteBracoEsquerdo
+        weight: 1
+      - path: bacia
+        weight: 1
+      - path: BracoDireito
+        weight: 1
+      - path: BracoEsquerdo
+        weight: 1
+      - path: colunaAlta
+        weight: 1
+      - path: colunaBaixa
+        weight: 1
+      - path: 'Cranio '
+        weight: 1
+      - path: femurDireito
+        weight: 1
+      - path: femurEsquerdo
+        weight: 1
+      - path: mandibula
+        weight: 1
+      - path: omoplatoDireito
+        weight: 1
+      - path: omoplatoEsquerdo
+        weight: 1
+      - path: peDireito
+        weight: 1
+      - path: peEsquerdo
+        weight: 1
+      - path: quadril
+        weight: 1
+      - path: quadril/coccix
+        weight: 1
+      - path: quadril/coccix/femur_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L
+        weight: 1
+      - path: quadril/coccix/femur_L/tibia_L/torso_L/falange_L
+        weight: 1
+      - path: quadril/coccix/femur_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R
+        weight: 1
+      - path: quadril/coccix/femur_R/tibia_R/torso_R/falange_R
+        weight: 1
+      - path: quadril/coccix/sacro
+        weight: 1
+      - path: quadril/coccix/sacro/lombares
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula
+          1
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/mandibula.001
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_L/sombraSup_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/axis/cranio/sombraInf_R/sombraSup_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeM_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavicula_R/umero_R/radio_R/metacarpo_R/falangeP_R
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeM_L
+        weight: 1
+      - path: quadril/coccix/sacro/lombares/toracicas/cervivais/clavivula_L/umero_L/radio_L/metacarpo_L/falangeP_L
+        weight: 1
+      - path: quadril/coccix.001
+        weight: 1
+      - path: quadril/mao_L
+        weight: 1
+      - path: quadril/mao_L/cotovelo_L
+        weight: 1
+      - path: quadril/mao_R
+        weight: 1
+      - path: quadril/mao_R/cotovelo_R
+        weight: 1
+      - path: quadril/pe_L
+        weight: 1
+      - path: quadril/pe_L/joelho_L
+        weight: 1
+      - path: quadril/pe_R
+        weight: 1
+      - path: quadril/pe_R/joelho_R
+        weight: 1
+      - path: torax
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
