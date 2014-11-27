@@ -24,12 +24,17 @@ function Update () {
 				GameObject.FindWithTag("Character").animation.CrossFadeQueued("DownWard", 0.02, QueueMode.PlayNow);
 			}
 			else{
-				GameObject.FindWithTag("Character").animation.CrossFadeQueued("Jump_Down", 0.02, QueueMode.CompleteOthers);
+				GameObject.FindWithTag("Character").animation.CrossFade("Jump_Down", 0.1);
 				transform.renderer.material.color = new Color(1,0,0,1);
 			}
 		}
 		else{
-				GameObject.FindWithTag("Character").animation.CrossFadeQueued("JumpAir_Up", 0.02, QueueMode.PlayNow);
+				if(GetComponent(PlayerController).extraJumpCountTMP == 1){
+					GameObject.FindWithTag("Character").animation.CrossFadeQueued("JumpAir_Up",0.01, QueueMode.PlayNow);
+				}
+				else if(GetComponent(PlayerController).extraJumpCountTMP == 0){
+					GameObject.FindWithTag("Character").animation.CrossFade("Jump_Up",0.01);
+				}
 				transform.renderer.material.color = new Color(1,1,0,1);
 		}
 	}
