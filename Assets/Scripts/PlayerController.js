@@ -64,7 +64,7 @@ function Update () {
 		}
 		
 		//===============[DOWNWARD STRIKE]=================
-		if(GameObject.Find("Player").GetComponent(CollisionChecker).isGrounded && action == actionState.DownwardStrike){
+		if(GetComponent(CollisionChecker).isGrounded && action == actionState.DownwardStrike){
 			action = actionState.Run;//... ao colidir com o solo e o fim do Downward Strike.
 		}
 	

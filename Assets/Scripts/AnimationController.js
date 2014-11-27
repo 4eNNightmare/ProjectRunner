@@ -3,6 +3,7 @@
 var downwardStrikeImpactParticle : GameObject;
 var jumpImpactParticle : GameObject;
 private var impacted : boolean = false;
+var RagDoll : GameObject;
 
 function Start () {
 
@@ -40,7 +41,10 @@ function Update () {
 	}
 	
 	if(GetComponent(CollisionChecker).fatalCollision){
-		transform.renderer.material.color = new Color(0,1,0,1);
+			RagDoll = Instantiate(RagDoll,transform.position, transform.rotation);
+			RagDoll.transform.rigidbody.velocity = transform.rigidbody.velocity/2;
+			Destroy(gameObject);
+			transform.renderer.material.color = new Color(0,1,0,1);
 	}
 	
 	if(GetComponent(PlayerController).action == GetComponent(PlayerController).action.Roll){
