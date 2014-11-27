@@ -12,7 +12,7 @@ function Update () {
 	
 
 	if(GetComponent(CollisionChecker).isGrounded){
-		GameObject.FindWithTag("Character").animation.CrossFadeQueued("run", 0.10, QueueMode.CompleteOthers);
+		GameObject.FindWithTag("Character").animation.CrossFadeQueued("run", 0.2, QueueMode.CompleteOthers);
 		transform.renderer.material.color = new Color(0,0,1,1);
 		
 		
@@ -21,7 +21,7 @@ function Update () {
 		
 		if(rigidbody.velocity.y < 0){
 			if(GetComponent(PlayerController).action == actionState.DownwardStrike){
-				GameObject.FindWithTag("Character").animation.CrossFadeQueued("DownWard", 0.02, QueueMode.PlayNow);
+				GameObject.FindWithTag("Character").animation.CrossFade("DownWard", 0.02);
 			}
 			else{
 				GameObject.FindWithTag("Character").animation.CrossFade("Jump_Down", 0.1);
@@ -30,10 +30,10 @@ function Update () {
 		}
 		else{
 				if(GetComponent(PlayerController).extraJumpCountTMP == 1){
-					GameObject.FindWithTag("Character").animation.CrossFadeQueued("JumpAir_Up",0.01, QueueMode.PlayNow);
+					GameObject.FindWithTag("Character").animation.CrossFade("JumpAir_Up",0.1);
 				}
-				else if(GetComponent(PlayerController).extraJumpCountTMP == 0){
-					GameObject.FindWithTag("Character").animation.CrossFade("Jump_Up",0.01);
+				else{
+					GameObject.FindWithTag("Character").animation.CrossFade("Jump_Up",0.1);
 				}
 				transform.renderer.material.color = new Color(1,1,0,1);
 		}
