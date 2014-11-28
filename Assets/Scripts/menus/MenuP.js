@@ -11,20 +11,27 @@ var botao: boolean;
 
 static public var faseAtualNumber : int;
 
+var iniciaJogo: Texture2D;
+var selecaoFases: Texture2D;
+var creditos: Texture2D;
+var sair: Texture2D;
+
+var alteraBotao: GUISkin;
+
 function Start () {
-altura = 40;
-largura = 150;
+altura = Screen.height/2;
+largura = Screen.width/2;
 
 posiX = Screen.width/2 - largura/2;
 posiY = Screen.height/2 - altura/2;
 
-newgame = true;
 botao = true;
 }
 function Update () {
 }
 function OnGUI(){
-	if (GUI.Button(new Rect(posiX, posiY-75, largura, altura), "INICIAR JOGO")){
+	GUI.skin=alteraBotao;
+	if (GUI.Button(new Rect(posiX, posiY-(Screen.height/3.5), largura, altura), iniciaJogo)){
 		Application.LoadLevel(1);
 		 faseAtualNumber = 1;
 		
@@ -41,13 +48,16 @@ function OnGUI(){
 			}
     	}*/
     }
-    if (GUI.Button(new Rect(posiX, posiY-25, largura, altura), "SELEÇAO \nDE FASES")){
+    GUI.skin=alteraBotao;
+    if (GUI.Button(new Rect(posiX-(Screen.width/4), posiY, largura, altura), selecaoFases)){
 			Application.LoadLevel("SelecaoFases");
     }
-    if (GUI.Button(new Rect(posiX, posiY+25, largura, altura), "CREDITOS")){
+    GUI.skin=alteraBotao;
+    if (GUI.Button(new Rect(posiX+Screen.width/4, posiY, largura, altura), creditos)){
 			Application.LoadLevel("Creditos");
     }
-    if(GUI.Button(Rect(posiX, posiY+75, largura, altura), "SAIR")){
+    GUI.skin=alteraBotao;
+    if(GUI.Button(Rect(posiX, posiY+(Screen.height/3.5), largura, altura), sair)){
     	Application.Quit();
 	}
 }
