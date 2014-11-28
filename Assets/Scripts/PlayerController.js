@@ -21,18 +21,15 @@ function Update () {
 		if(GetComponent(ClickDetection).InputDown && action != actionState.Roll){//Se apertar para baixo e nao estiver rolando...
 			if(GetComponent(CollisionChecker).isGrounded){//...se estiver no chao...
 				inputRoll = true;//...pode rolar.
-				GetComponent(ClickDetection).InputDown = false;
 			}
 			else if(action != actionState.DownwardStrike){//... se estiver no ar e nao estiver em downwardStrike...
 				inputAirDown = true;//...pode downwardStrike.
-				GetComponent(ClickDetection).InputDown = false;
 			}
 		}
 		
 		
 		if(GetComponent(ClickDetection).InputUp && extraJumpCountTMP > 0){
 			inputJump = true;
-			GetComponent(ClickDetection).InputUp = false;
 		}
 		
 		//==================[JUMP]======================
@@ -69,6 +66,9 @@ function Update () {
 		}
 	
 	}
+					GetComponent(ClickDetection).InputDown = false;
+					GetComponent(ClickDetection).InputUp = false;
+					
 }
 
 function FixedUpdate () {
