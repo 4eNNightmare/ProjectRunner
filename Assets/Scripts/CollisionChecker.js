@@ -136,10 +136,10 @@ function OnCollisionEnter(collision : Collision) {
 	for (contact in collision.contacts) {
 		var p1 : Vector3 = contact.point;
 		var p2 : Vector3 = contact.point + contact.normal;
-		if(Vector2.Angle(p1, p2) < 0.185 && p1.x > p2.x && Mathf.Round(p1.y) == Mathf.Round(p2.y)){
+		if(Vector2.Angle(p1, p2) < 0.19 || p1.x > p2.x && Mathf.Round(p1.y) == Mathf.Round(p2.y)){
 			bodyHorizontalCollision = true;	
 		   	Debug.DrawLine(p1, p2, Color.red, 5, false);
-		   	//Debug.LogError("P1: "+ p1 + " , P2: " + p2 + " Angle: " + Vector2.Angle(p1, p2));
+		   //Debug.LogError("P1: "+ p1 + " , P2: " + p2 + " Angle: " + Vector2.Angle(p1, p2));
 		}
 		else{
 			bodyHorizontalCollision = false;

@@ -101,7 +101,7 @@ function FixedUpdate () {
 	//========================[WALK]=======================
 	if(!GetComponent(CollisionChecker).fatalCollision){
 		rigidbody.MovePosition(rigidbody.position + moveSpeed*Time.deltaTime);
-		if(rigidbody.velocity.x != 0){ //Tenta garantir que o jogador nao ira ganhar velocidade inesperadamente ao colidir
+		if((rigidbody.velocity.x != 0)&&(GetComponent(GameStateController).gameState != GameState.GameOver)){ //Tenta garantir que o jogador nao ira ganhar velocidade inesperadamente ao colidir
 			rigidbody.velocity.x = 0;
 		}
 	}

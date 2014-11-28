@@ -2,9 +2,8 @@
 
 
 private static var instance : MusicManager;
-private static var lastSceneName : String;
-private enum musicEnum {none, music1, music2}
-private var currentMusic : musicEnum;
+private static var lastMusic : AudioClip;
+private var lastSceneName : String;
 public var music : AudioClip[];
 			
 public static function GetInstance() : MusicManager{
@@ -12,6 +11,7 @@ public static function GetInstance() : MusicManager{
 }
 
 function Awake(){
+	AudioListener.pause = false;
 	
 	if(instance != null && instance != this){
 		Destroy(gameObject);
@@ -19,7 +19,6 @@ function Awake(){
 	}
 	else{
 		instance = this;
-		currentMusic = musicEnum.none;
 	}
 	DontDestroyOnLoad(gameObject);
 }
@@ -27,17 +26,17 @@ function Awake(){
 function ChangeMusic(){
 	switch(Application.loadedLevelName){
 		case "MenuP":
-			if(currentMusic != musicEnum.music1){
+			if(lastMusic != music[0]){
 				transform.audio.clip = music[0];
 				transform.audio.Play();
-				currentMusic = musicEnum.music1;
+				lastMusic = music[0];
 			}
 		break;
 		case "Scene02":
-			if(currentMusic != musicEnum.music2){
+			if(lastMusic != music[1]){
 				transform.audio.clip =  music[1];
 				transform.audio.Play();
-				currentMusic = musicEnum.music2;
+				lastMusic = music[1];
 			}
 		break;
 	}

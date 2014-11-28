@@ -38,6 +38,7 @@ function Update () {
 	if(ClickPosition.y < 0) ClickPosition.y = -ClickPosition.y;
 	
 	if(Input.GetMouseButtonDown(0)){
+		
 		//======================= LAYOUT DO RETANGULO =====================//
 		if(StyleLayout == LayoutState.Rectangle){
 			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) InputUp = true;
@@ -53,6 +54,12 @@ function Update () {
 				if( PointInTriangle(ClickPosition,FormaBotao[1],FormaBotao[4],FormaBotao[3]) ) print('BTN3'); //direita
 				if( PointInTriangle(ClickPosition,FormaBotao[3],FormaBotao[4],FormaBotao[2]) ) InputDown = true; //baixo
 		}
+	}
+	else{
+		if(Input.GetKeyDown("up"))
+			InputUp = true;
+		if(Input.GetKeyDown("down"))
+			InputDown=true;
 	}
 }
 
