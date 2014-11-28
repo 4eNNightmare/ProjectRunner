@@ -43,7 +43,8 @@ function Update () {
 	if(GetComponent(CollisionChecker).fatalCollision){
 			RagDoll = Instantiate(RagDoll,transform.position, transform.rotation);
 			RagDoll.transform.rigidbody.velocity = transform.rigidbody.velocity/2;
-			Destroy(gameObject);
+			Destroy(GameObject.Find("Player").GetComponent("AnimationController"));
+			Destroy(GameObject.Find("Character_Model"));
 			transform.renderer.material.color = new Color(0,1,0,1);
 	}
 	
