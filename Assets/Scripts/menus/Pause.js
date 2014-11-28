@@ -67,6 +67,8 @@ function OnGUI(){
 					Application.LoadLevel(Application.loadedLevel);
 					Time.timeScale = 1;
 					controlePause = true;
+					botao = true;
+					AudioListener.pause = false;
 				}
 				GUI.skin=alteraBotao2;
     			if (GUI.Button(Rect(posiX2, posiY2-40, largura2, altura2), "Selecao de Fases")){
