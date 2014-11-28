@@ -2,6 +2,7 @@
 
 var score : int;
 var guiSkin : GUISkin;
+
 private var initialPositionX : float;
 
 function Start(){
@@ -13,5 +14,5 @@ function OnGUI(){
 	if(transform.position.x - initialPositionX > score){
 		score = transform.position.x - initialPositionX;
 	}
-	GUI.Label (Rect (Screen.width/2 - 50, 10, 100, 20), ""+score);	
+	GUI.Label (Rect (Screen.width/2 - 50, 10, 100, 50), ""+score);	
 }
