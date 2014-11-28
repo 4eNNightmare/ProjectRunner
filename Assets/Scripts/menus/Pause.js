@@ -20,7 +20,7 @@ function Start () {
 }
 
 function OnGUI(){
-	altura = (Screen.height+Screen.width)/30;
+	altura = (Screen.height+Screen.width)/20;
 	largura = altura;
 	posiX = Screen.width - altura;
 	posiY = 0;
@@ -32,6 +32,7 @@ function OnGUI(){
     			Time.timeScale = 0;
     			controlePause = false;
     			botao = false;
+    			AudioListener.pause = true;
     		}
     	}
     }
@@ -43,6 +44,8 @@ function OnGUI(){
 				Time.timeScale = 1;
 				controlePause = true;
 				botao = true;
+				AudioListener.pause = false;
+				
 			}
 		}
 	}
