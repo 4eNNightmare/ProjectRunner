@@ -19,11 +19,11 @@ var sair: Texture2D;
 var alteraBotao: GUISkin;
 
 function Start () {
-altura = Screen.height/2;
-largura = Screen.width/2;
+	altura = (Screen.height+Screen.width)/12;
+	largura = altura;
 
 posiX = Screen.width/2 - largura/2;
-posiY = Screen.height/2 - altura/2;
+posiY = Screen.height- altura;
 
 botao = true;
 }
@@ -31,33 +31,19 @@ function Update () {
 }
 function OnGUI(){
 	GUI.skin=alteraBotao;
-	if (GUI.Button(new Rect(posiX, posiY-(Screen.height/3.5), largura, altura), iniciaJogo)){
-		Application.LoadLevel(1);
-		 faseAtualNumber = 1;
-		
-		/*if(newgame){
-			GUI.Box(Rect(posiX, posiY-50, largura, altura),"Todo progresso sera \n perdido deseja continuar?");
-			if (GUI.Button(new Rect(posiX, posiY-50, largura, altura), "Sim")){
-    			Application.LoadLevel(1);
-				faseAtualNumber = 1;
-			}
-		}
-			if (GUI.Button(new Rect(posiX, posiY-50, largura, altura), "Nao")){
-    			Application.LoadLevel(2);
-				faseAtualNumber = 2;
-			}
-    	}*/
+	if (GUI.Button(new Rect(posiX-(largura*1.5), posiY, largura, altura), iniciaJogo)){
+		Application.LoadLevel("Scene02");
     }
+    //GUI.skin=alteraBotao;
+    //if (GUI.Button(new Rect(0, 0, largura, altura), selecaoFases)){
+	//		Application.LoadLevel("SelecaoFases");
+    //}
     GUI.skin=alteraBotao;
-    if (GUI.Button(new Rect(posiX-(Screen.width/4), posiY, largura, altura), selecaoFases)){
-			Application.LoadLevel("SelecaoFases");
-    }
-    GUI.skin=alteraBotao;
-    if (GUI.Button(new Rect(posiX+Screen.width/4, posiY, largura, altura), creditos)){
+    if (GUI.Button(new Rect(posiX, posiY, largura, altura), creditos)){
 			Application.LoadLevel("Creditos");
     }
     GUI.skin=alteraBotao;
-    if(GUI.Button(Rect(posiX, posiY+(Screen.height/3.5), largura, altura), sair)){
+    if(GUI.Button(Rect(posiX+(largura*1.5), posiY, largura, altura), sair)){
     	Application.Quit();
 	}
 }

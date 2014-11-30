@@ -27,7 +27,7 @@ function Start () {
 	botao = true;
 	
 altura2 = 60;
-largura2 = 150;
+largura2 = Screen.width/5.5;
 
 posiX2 = Screen.width/30 - largura/2;
 posiY2 = Screen.height/2 - altura/2;
@@ -61,7 +61,7 @@ function OnGUI(){
 					botao = true;
 					AudioListener.pause = false;
 				}
-				GUI.Box(Rect(0, 0, Screen.width/6, Screen.height),"\n\n\n\n\nJogo Pausado");
+				GUI.Box(Rect(0, 0, Screen.width/5, Screen.height),"\n\n\n\n\nJogo Pausado");
 				GUI.skin=alteraBotao2;
 				if(GUI.Button(Rect(posiX2, posiY2-120, largura2, altura2), "Recomeçar")){
 					Application.LoadLevel(Application.loadedLevel);
@@ -70,11 +70,11 @@ function OnGUI(){
 					botao = true;
 					AudioListener.pause = false;
 				}
-				GUI.skin=alteraBotao2;
+				/*GUI.skin=alteraBotao2;
     			if (GUI.Button(Rect(posiX2, posiY2-40, largura2, altura2), "Selecao de Fases")){
 					Application.LoadLevel("SelecaoFases");
 					Time.timeScale = 1;
-    			}
+    			}*/
     			GUI.skin=alteraBotao2;
     			if(GUI.Button(Rect(posiX2, posiY2+40, largura2, altura2), "RETORNAR AO \nMENU PRINCIPAL")){
     				Application.LoadLevel("MenuP");
