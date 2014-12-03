@@ -42,9 +42,9 @@ function Update () {
 		//======================= LAYOUT DO RETANGULO =====================//
 		if(StyleLayout == LayoutState.Rectangle){
 			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) InputUp = true;
-			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) print('null2');
-			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) InputDown=true;
-			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) print('null3');
+			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y < alturaMaxima/2) ) InputDown = true;
+			 if( (ClickPosition.x < larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) InputUp = true;
+			 if( (ClickPosition.x > larguraMaxima/2)&& (ClickPosition.y > alturaMaxima/2) ) InputDown = true;
 			 // caso caia na divisa de x ou y nao faz nada.
 		}
 		//======================= LAYOUT DO TRIANGULO =====================//
